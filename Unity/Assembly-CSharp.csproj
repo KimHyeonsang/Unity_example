@@ -2,20 +2,18 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>7.1</LangVersion>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -64,11 +62,13 @@
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\Step01\Player_Control.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
+    <Compile Include="Assets\Step01\Bullectcontrollor.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\Player_Control.cs" />
-    <Compile Include="Assets\Bullectcontrollor.cs" />
+    <Compile Include="Assets\Step03\Sun_Control.cs" />
+    <Compile Include="Assets\Step03\Earth_Control.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
