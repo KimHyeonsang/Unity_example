@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637716887379170460
+      ticks: 637719477844517817
     m_Hash: 1901230284
   m_LockFileStatus:
     m_FilePath: C:/Users/SGA/Documents/GitHub/Unity_example/Unity/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637716887379170460
+      ticks: 637719477844517817
     m_Hash: 1666658725
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
