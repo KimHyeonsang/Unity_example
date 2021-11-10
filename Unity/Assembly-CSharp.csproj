@@ -56,25 +56,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Step_05(싱글톤)\Singleton.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringCollider.cs" />
-    <Compile Include="Assets\Step_03(회전)\Earth_Control.cs" />
+    <Compile Include="Assets\Step_04(Rotate example)\Samplerotetion.cs" />
+    <Compile Include="Assets\Step_03(Rotate)\Earth_Control.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringManager.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\RandomWind.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\IKCtrlRightHand.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
+    <Compile Include="Assets\Step_02\SampleCollition.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
-    <Compile Include="Assets\Step_03(회전)\Sun_Control.cs" />
-    <Compile Include="Assets\Step_01(이동,충돌)\Player_Control.cs" />
+    <Compile Include="Assets\Step_03(Rotate)\Sun_Control.cs" />
+    <Compile Include="Assets\Step_01(move,collision)\Player_Control.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
-    <Compile Include="Assets\Step_01(이동,충돌)\Bullectcontrollor.cs" />
-    <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\Step_04(회전 예시)\Samplerotetion.cs" />
-    <Compile Include="Assets\Step_05(싱글톤)\Singleton.cs" />
+    <Compile Include="Assets\Step_01(move,collision)\Bullectcontrollor.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\SampleSingletonTest.cs" />
-    <Compile Include="Assets\Step_02\SampleCollition.cs" />
+    <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
+    <Compile Include="Assets\Step_06( ObjectManager bulletList )\ObjectManager.cs" />
+    <Compile Include="Assets\Step_06( ObjectManager bulletList )\SamplePlayerControllor.cs" />
+    <Compile Include="Assets\Step_06( ObjectManager bulletList )\SampleBulletControllor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
