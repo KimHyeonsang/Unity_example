@@ -440,10 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317f10dfe6f9cdc42a43422acf8d40b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableList: []
-  BulletParent: {fileID: 0}
-  BulletPrefab: {fileID: 1567273420662105004, guid: e41a28217caafac46bcbcde54b77ec8c, type: 3}
-  BullectCount: 0
 --- !u!1 &767242586
 GameObject:
   m_ObjectHideFlags: 0
