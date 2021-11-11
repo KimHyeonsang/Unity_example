@@ -47,6 +47,7 @@ public class SamplePlayerControllor : MonoBehaviour
             {
                 for (int i = 0; i < 5; i++)
                 {
+                    
                     GameObject Obj = Instantiate(BulletPrefab);
                     Obj.transform.name = Count.ToString();
                     ++Count;
@@ -54,6 +55,7 @@ public class SamplePlayerControllor : MonoBehaviour
                     ObjectManager.GetInstance().GetDisableList.Push(Obj);
                 }
             }
+          
             GameObject Bullet = ObjectManager.GetInstance().GetDisableList.Pop();
             Bullet.transform.position = transform.position;
             Bullet.SetActive(true);

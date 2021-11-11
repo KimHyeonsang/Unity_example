@@ -34,7 +34,7 @@ public class bodyControllor : MonoBehaviour
             transform.Translate(Vector3.forward * Speed * Time.deltaTime);           
         }
 
-        
+        // ** 포움직임
         if(gameObject.transform.Find("Angle"))
         {
             if (Input.GetKey(KeyCode.Q))
@@ -42,7 +42,7 @@ public class bodyControllor : MonoBehaviour
                 Vector3 aaa = gameObject.transform.Find("Angle").transform.eulerAngles;
                 Debug.Log(Mathf.Abs(aaa.x));
                 //x축 움직임 위로 최대 -90도 까지
-                if ( aaa.x < 2 || aaa.x > 270)
+                if ( aaa.x < 5.0f || aaa.x > 275.0f)
                 {
                     gameObject.transform.Find("Angle").transform.Rotate(-20 * Time.deltaTime, 0.0f, 0.0f);
                     Debug.Log(Mathf.Max(-90.0f, aaa.x));
@@ -55,6 +55,14 @@ public class bodyControllor : MonoBehaviour
                     gameObject.transform.Find("Angle").transform.Rotate(20 * Time.deltaTime, 0.0f, 0.0f);
             }
         }
-       
+
+        // ** 포 쏘기
+        if (gameObject.transform.Find("PoSin"))
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+
+            }
+        }
     }
 }

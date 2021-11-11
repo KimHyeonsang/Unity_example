@@ -76,9 +76,13 @@
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
     <Compile Include="Assets\Step_01(move,collision)\Bullectcontrollor.cs" />
     <Compile Include="Assets\Step_06( ObjectManager bulletList )\SampleBulletControllor.cs" />
+    <Compile Include="Assets\example\bodyControllor.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\SampleSingletonTest.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\example\bodyControllor.cs" />
+    <Compile Include="Assets\Step_07\SingletonParent.cs" />
+    <Compile Include="Assets\Step_07\SampleObjectManager.cs" />
+    <Compile Include="Assets\Step_07\PlayerCtrl.cs" />
+    <Compile Include="Assets\Step_07\BulletContrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />

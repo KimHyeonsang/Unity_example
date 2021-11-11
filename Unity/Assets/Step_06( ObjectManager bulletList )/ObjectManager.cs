@@ -44,12 +44,12 @@ public class ObjectManager
     // ** ÇöÀç ºí·¿ÀÇ °¹¼ö
     private int BullectCount = 0;
 
- //   private void Awake()
- //   {
-     //   BulletParent = new GameObject("BulletParent");
-        
-    //    BulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
- //   }
+    private void Awake()
+    {
+      BulletParent = new GameObject("BulletParent");
+      
+      BulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
+    }
     private void Start()
     {
         BullectCount = 0;

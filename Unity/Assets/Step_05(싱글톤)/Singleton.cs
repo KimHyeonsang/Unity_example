@@ -32,6 +32,7 @@ public class Singleton : MonoBehaviour
     }
     */
     // ** Singleton 3
+
     private static Singleton Instance = null;
     private static GameObject Container = null;
 
@@ -62,4 +63,7 @@ public class Singleton : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
             Debug.Log("Singleton");
     }
+
+
+    // ** Singleton 4
 }
