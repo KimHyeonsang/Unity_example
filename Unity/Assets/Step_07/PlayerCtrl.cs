@@ -10,8 +10,10 @@ public class PlayerCtrl : MonoBehaviour
     private int Count = 0;
     [SerializeField] private GameObject BulletParent = null;
     [SerializeField] private GameObject BulletPrefab = null;
-    private float JumpSpeed = 5;
-    private bool Jumpcheck = true;
+
+    private bool bJump;
+    private float JumpSpeed = 500.0f;
+    Rigidbody rid;
     private void Awake()
     {
         BulletParent = new GameObject("BulletParent");
@@ -27,6 +29,9 @@ public class PlayerCtrl : MonoBehaviour
 
         SphereCollider bulletcollior = BulletPrefab.GetComponent<SphereCollider>();
         bulletcollior.isTrigger = false;
+
+        rid = GetComponent<Rigidbody>();
+        bJump = false;
     }
 
     private void Update()
@@ -71,15 +76,11 @@ public class PlayerCtrl : MonoBehaviour
         // ** Jump
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Jumpcheck = false;
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-        }
-
-        if (Jumpcheck == false)
+            
             Jump();
 
-
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -87,20 +88,18 @@ public class PlayerCtrl : MonoBehaviour
         if (gameObject.transform.Find("Plane"))
         {
             gameObject.GetComponent<Rigidbody>().useGravity = false;
+
+            rid.velocity = Vector3.zero;
+            bJump = false;
         }
     }
 
     private void Jump()
     {
-        if (Jumpcheck)
+        if (bJump)
             return;
-        transform.Translate(0.0f, JumpSpeed * Time.deltaTime, 0.0f);
-        JumpSpeed += 2;
 
-        if (JumpSpeed == 100.0f)
-        {
-            JumpSpeed = 2;
-            Jumpcheck = true;
-        }
+        bJump = true;
+        rid.AddForce(Vector3.up * JumpSpeed);
     }
 }
