@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     private Vector3 LookDirection;
-    private float WhillSpeed = 0;
     [SerializeField] private float Speed = 0.0f;
     private int Count = 0;
     [SerializeField] private GameObject BulletParent = null;
@@ -94,7 +93,7 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
         if (bJump)
             return;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InspectorEditor : MonoBehaviour,IDragHandler, IPointerUpHandler,IPointerDownHandler
+public class InspectorEditor : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     /*
     [Header("Element")]
@@ -47,6 +47,7 @@ public class InspectorEditor : MonoBehaviour,IDragHandler, IPointerUpHandler,IPo
     {
         // ** BackBoard의 반지름을 구함.
         Radius = (BackBoard.rect.width / 2.0f);
+       
         Speed = 5.0f;
     }
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class bodyControllor : MonoBehaviour
 {
-    [SerializeField] private float Speed = 0;
+    [SerializeField] private float Speed = 0.0f;
     private Vector3 LookDirection;
-    private float WhillSpeed = 0;
+    private float WhillSpeed = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
