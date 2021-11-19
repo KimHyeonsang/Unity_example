@@ -293,7 +293,3 @@ C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.cspr
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.dll
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.pdb
-C:\Users\SGA\Documents\GitHub\Unity_example\Unity\Temp\Bin\Debug\nunit.framework.dll
-C:\Users\SGA\Documents\GitHub\Unity_example\Unity\Temp\Bin\Debug\unityplastic.dll
-C:\Users\SGA\Documents\GitHub\Unity_example\Unity\Temp\Bin\Debug\Unity.Plastic.Antlr3.Runtime.dll
-C:\Users\SGA\Documents\GitHub\Unity_example\Unity\Temp\Bin\Debug\Mono.Posix.dll

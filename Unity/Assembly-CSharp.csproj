@@ -56,6 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Step_09(레이 캐스팅)\RayPoint.cs" />
     <Compile Include="Assets\Step_06( ObjectManager bulletList )\ObjectManager.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\Singleton.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringCollider.cs" />
@@ -71,9 +72,10 @@
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\Step_02\SampleCollition.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
-    <Compile Include="Assets\Step_08\InspectorEditor.cs" />
+    <Compile Include="Assets\Step_08(joystick)\InspectorEditor.cs" />
     <Compile Include="Assets\Step_03(Rotate)\Sun_Control.cs" />
     <Compile Include="Assets\Step_07\SingletonParent.cs" />
+    <Compile Include="Assets\Step_10\MyGizmo.cs" />
     <Compile Include="Assets\Step_01(move,collision)\Player_Control.cs" />
     <Compile Include="Assets\Step_07\SampleObjectManager.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
@@ -84,7 +86,8 @@
     <Compile Include="Assets\example\bodyControllor.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\SampleSingletonTest.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\Step_09\RayPoint.cs" />
+    <Compile Include="Assets\Step_10\ViewAngle.cs" />
+    <Compile Include="Assets\Step_10\ViewAngleEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
