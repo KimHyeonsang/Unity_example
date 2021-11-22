@@ -838,7 +838,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 63ce86c28f170084eb41bc8c8e3243c5, type: 2}
+  - {fileID: 2100000, guid: 567d2e456c849564cac86f7374b1fffa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1860,7 +1860,8 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 2048
-  TargetList: []
+  TargetList:
+  - {fileID: 386206135}
   ViewMeshFilter: {fileID: 386206133}
 --- !u!1 &1555520969
 GameObject:

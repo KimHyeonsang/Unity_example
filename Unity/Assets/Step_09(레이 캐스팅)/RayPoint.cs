@@ -10,7 +10,7 @@ public class RayPoint : MonoBehaviour
     private void Awake()
     {
         // ** 프리팹불러오기
-        CubePrefab = Resources.Load("Prefabs/Cubee") as GameObject;
+        CubePrefab = Resources.Load("Prefabs/Step_10/Cubee") as GameObject;
         MainCamera = GameObject.Find("Main Camera");
     }
 

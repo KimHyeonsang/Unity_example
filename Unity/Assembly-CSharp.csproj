@@ -75,7 +75,8 @@
     <Compile Include="Assets\Step_08(joystick)\InspectorEditor.cs" />
     <Compile Include="Assets\Step_03(Rotate)\Sun_Control.cs" />
     <Compile Include="Assets\Step_07\SingletonParent.cs" />
-    <Compile Include="Assets\Step_10\MyGizmo.cs" />
+    <Compile Include="Assets\Step_10(이동 방향확인하는 범위)\ViewAngle.cs" />
+    <Compile Include="Assets\Step_10(이동 방향확인하는 범위)\MyGizmo.cs" />
     <Compile Include="Assets\Step_01(move,collision)\Player_Control.cs" />
     <Compile Include="Assets\Step_07\SampleObjectManager.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
@@ -84,10 +85,13 @@
     <Compile Include="Assets\Step_06( ObjectManager bulletList )\SampleBulletControllor.cs" />
     <Compile Include="Assets\Step_07\BulletContrl.cs" />
     <Compile Include="Assets\example\bodyControllor.cs" />
+    <Compile Include="Assets\Step_10(이동 방향확인하는 범위)\ViewAngleEditor.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\SampleSingletonTest.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\Step_10\ViewAngle.cs" />
-    <Compile Include="Assets\Step_10\ViewAngleEditor.cs" />
+    <Compile Include="Assets\Step_11\WayPoint.cs" />
+    <Compile Include="Assets\Example_11(waypoint로 선만들기)\waypointline.cs" />
+    <Compile Include="Assets\Step_11\LineEditer.cs" />
+    <Compile Include="Assets\Step_11\manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
