@@ -293,3 +293,7 @@ C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.cspr
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.dll
 C:\Users\SGA\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.pdb
+C:\Users\asakq\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\asakq\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\asakq\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.dll
+C:\Users\asakq\Documents\GitHub\Unity_example\Unity\obj\Debug\Assembly-CSharp.pdb

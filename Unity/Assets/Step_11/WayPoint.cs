@@ -10,8 +10,8 @@ public class WayPoint : MonoBehaviour
     [SerializeField] private Vector2 PointB;
 
 
-    [SerializeField]private GameObject WayPointPrefab;
-    [SerializeField] private int WayPointCount = 0;
+    [SerializeField]public GameObject WayPointPrefab;
+    [SerializeField] public int WayPointCount = 0;
     [SerializeField] public List<GameObject> WayPointlist = new List<GameObject>();
 
     private void Awake()
@@ -33,7 +33,7 @@ public class WayPoint : MonoBehaviour
             GameObject Obj = Instantiate(WayPointPrefab);
 
             Obj.AddComponent<Rigidbody>();
-            Obj.AddComponent<Collider>();
+            Obj.AddComponent<BoxCollider>();
 
 
             Obj.transform.position = new Vector3(
@@ -52,15 +52,9 @@ public class WayPoint : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void distroyboll(int _Number)
     {
-        if (collision.transform.name == "Ground")
-        {
-            for (int i = 0; i < WayPointCount; ++i)
-            {
-                WayPointlist[i].GetComponent<Rigidbody>().useGravity = false;               
-            }
-        }
+        WayPointlist.RemoveAt(_Number);
     }
     
 }
