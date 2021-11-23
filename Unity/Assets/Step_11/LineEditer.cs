@@ -8,9 +8,7 @@ public class LineEditer : Editor
 {
     private void OnSceneGUI()
     {
-        WayPoint t = (WayPoint)target;
-
-     
+        WayPoint t = (WayPoint)target;     
 
         Handles.color = Color.green;
         // 선 이어주기
@@ -20,5 +18,6 @@ public class LineEditer : Editor
             Handles.DrawLine(t.WayPointlist[i].transform.position, t.WayPointlist[i + 1].transform.position);
             
         }
+        Handles.DrawLine(t.WayPointlist[t.WayPointlist.Count -1].transform.position, t.WayPointlist[0].transform.position);
     }
 }

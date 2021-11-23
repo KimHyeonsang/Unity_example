@@ -5,7 +5,9 @@ using UnityEngine;
 public class WayPoint : MonoBehaviour
 {
     [SerializeField] public Vector2 Radius;
-
+    [SerializeField] public GameObject EnemyPrefab;
+    // ** Enemy가  처음 가야할 번호
+    [SerializeField] public int NodeNumber;
     [SerializeField] private Vector2 PointA;
     [SerializeField] private Vector2 PointB;
 
@@ -17,15 +19,16 @@ public class WayPoint : MonoBehaviour
     private void Awake()
     {
         WayPointPrefab = Resources.Load("Prefabs/Step_11/WayPointPrefabs") as GameObject;
+        EnemyPrefab = Resources.Load("Prefabs/Step_11/Enemy") as GameObject;
 
-        
     }
 
     void Start()
     {
+        NodeNumber = 0;
 
-        PointA = new Vector2(transform.position.x - Radius.x, transform.position.z + Radius.y);
-        PointB = new Vector2(transform.position.x + Radius.x, transform.position.z - Radius.y);
+        WayPointManager.GetInstance().PointA = new Vector2(transform.position.x - Radius.x, transform.position.z + Radius.y);
+        WayPointManager.GetInstance().PointB = new Vector2(transform.position.x + Radius.x, transform.position.z - Radius.y);
 
         
         for (int i=0;i< WayPointCount;++i)
@@ -35,26 +38,31 @@ public class WayPoint : MonoBehaviour
             Obj.AddComponent<Rigidbody>();
             Obj.AddComponent<BoxCollider>();
 
+            Obj.transform.parent = transform;
 
             Obj.transform.position = new Vector3(
-                Random.Range(PointA.x, PointB.x),
+                Random.Range(WayPointManager.GetInstance().PointA.x,
+                WayPointManager.GetInstance().PointB.x),
                 5.0f,
-                Random.Range(PointA.y, PointB.y));
+                Random.Range(WayPointManager.GetInstance().PointA.y,
+                WayPointManager.GetInstance().PointB.y));
 
             WayPointlist.Add(Obj);
         }
        
     }
-
     
     void Update()
     {
-        
+       // WayPointlist[NodeNumber];
+
+        NodeNumber++;
+
+        if (NodeNumber > (WayPointlist.Count - 1))
+        {
+
+        }
     }
 
-    public void distroyboll(int _Number)
-    {
-        WayPointlist.RemoveAt(_Number);
-    }
     
 }
