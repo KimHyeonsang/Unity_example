@@ -48,9 +48,9 @@ public class WayPointAditor : EditorWindow
 
         Nodeobj.AddComponent<GetGizmo>();
         Nodeobj.AddComponent<Node>();
-        Nodeobj.AddComponent<BoxCollider>();
+        Nodeobj.AddComponent<BoxCollider>().isTrigger = true;
         Nodeobj.AddComponent<Rigidbody>().useGravity = false;
-
+        Nodeobj.layer = 8;
         Nodeobj.transform.position = new Vector3(
             Random.Range(-5.0f, 5.0f),
             0.0f,

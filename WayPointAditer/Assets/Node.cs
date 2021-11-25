@@ -7,7 +7,6 @@ public class Node : MonoBehaviour
     public Node NextNode;
 
 
-
 }
 
 [CustomEditor(typeof (Node))]

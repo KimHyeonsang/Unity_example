@@ -7,15 +7,20 @@ public class PlayerControl : MonoBehaviour
     private GameObject Obj;
     private float Speed;
     private Vector3 Diretion;
-    Node Target;
+    private int iNumber;
+    Node TargetParent;
+    GameObject Chilld;
     private void Awake()
     {
-        Target = new Node();
+        Chilld = GameObject.Find("ParentNode");
+        
     }
     void Start()
     {
-        
-        Diretion = (Target.transform.position - transform.position).normalized;
+        iNumber = 0;
+        TargetParent = Chilld.transform.GetChild(iNumber).GetComponent<Node>();
+        Diretion = (TargetParent.transform.position - transform.position).normalized;
+        ++iNumber;
         Speed = 5.0f;
     }
 
@@ -27,9 +32,19 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 그다음 좌표 받기
-        Diretion = (Target.NextNode.transform.position - transform.position).normalized;
+       
 
-        Target = new Node();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        TargetParent = Chilld.transform.GetChild(iNumber).GetComponent<Node>();
+        if (other.transform.position == TargetParent.NextNode.transform.position)
+        {
+            Diretion = (TargetParent.transform.position - transform.position).normalized;
+            if (iNumber + 1 >= Chilld.transform.childCount)
+                iNumber = 0;
+            else
+                ++iNumber;
+        }
     }
 }
