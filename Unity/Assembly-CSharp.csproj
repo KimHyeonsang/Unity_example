@@ -54,16 +54,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Step_11\WayPointManager.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\WayPointManager.cs" />
     <Compile Include="Assets\Step_09(레이 캐스팅)\RayPoint.cs" />
     <Compile Include="Assets\Step_06( ObjectManager bulletList )\ObjectManager.cs" />
-    <Compile Include="Assets\Step_11\LineEditer.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\LineEditer.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\Singleton.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringCollider.cs" />
-    <Compile Include="Assets\Step_11\WayPoint.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\EnemyController.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\WayPoint.cs" />
     <Compile Include="Assets\Step_04(Rotate example)\Samplerotetion.cs" />
     <Compile Include="Assets\Step_03(Rotate)\Earth_Control.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\GameManager.cs" />
     <Compile Include="Assets\Step_07\PlayerCtrl.cs" />
+    <Compile Include="Assets\Step_12(IEnumerator)쓰레드같은역활\MyCoroutine.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringManager.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\RandomWind.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\IKCtrlRightHand.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\Step_02\SampleCollition.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+    <Compile Include="Assets\Step_12(IEnumerator)쓰레드같은역활\CreateCube.cs" />
     <Compile Include="Assets\Step_08(joystick)\InspectorEditor.cs" />
     <Compile Include="Assets\Step_03(Rotate)\Sun_Control.cs" />
     <Compile Include="Assets\Step_07\SingletonParent.cs" />
@@ -82,7 +86,7 @@
     <Compile Include="Assets\Step_07\SampleObjectManager.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
-    <Compile Include="Assets\Step_11\WayPointBase.cs" />
+    <Compile Include="Assets\Step_11(랜덤이동경로)\WayPointBase.cs" />
     <Compile Include="Assets\Step_01(move,collision)\Bullectcontrollor.cs" />
     <Compile Include="Assets\Example_11(waypoint로 선만들기)\waypointline.cs" />
     <Compile Include="Assets\Step_06( ObjectManager bulletList )\SampleBulletControllor.cs" />
@@ -91,8 +95,6 @@
     <Compile Include="Assets\Step_10(이동 방향확인하는 범위)\ViewAngleEditor.cs" />
     <Compile Include="Assets\Step_05(싱글톤)\SampleSingletonTest.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringBone.cs" />
-    <Compile Include="Assets\Step_11\GameManager.cs" />
-    <Compile Include="Assets\Step_11\EnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
