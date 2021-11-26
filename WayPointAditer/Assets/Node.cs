@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+[RequireComponent(typeof(SphereCollider))]
 public class Node : MonoBehaviour
 {
-    public Node NextNode;
+    
+    public Node NextNode =  null;
+    public int Index = 0;
+
+    private void Start()
+    {
+        transform.tag = "Node";
+        SphereCollider Coll = transform.GetComponent<SphereCollider>();
+
+        Coll.radius = 0.2f;
+    }
 
 
 }

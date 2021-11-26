@@ -45,28 +45,37 @@ public class WayPointAditor : EditorWindow
      //   Nodeobj.transform.parent = ParentNode.transform;  과 동일
         Nodeobj.transform.SetParent(ParentNode.transform);
 
+        Nodeobj.AddComponent<GetGizmo>();        
 
-        Nodeobj.AddComponent<GetGizmo>();
-        Nodeobj.AddComponent<Node>();
-        Nodeobj.AddComponent<BoxCollider>().isTrigger = true;
-        Nodeobj.AddComponent<Rigidbody>().useGravity = false;
-        Nodeobj.layer = 8;
-        Nodeobj.transform.position = new Vector3(
-            Random.Range(-5.0f, 5.0f),
-            0.0f,
-            Random.Range(-5.0f, 5.0f));
+        Node CurrentNode = Nodeobj.AddComponent<Node>();
 
-        Node node = Nodeobj.GetComponent<Node>();
+        CurrentNode.Index = ParentNode.transform.childCount - 1;
 
-        // 연결을 할려면 1보단 커야한다.
-        if (ParentNode.transform.childCount > 1)
+
+        while (true)
         {
-            node.NextNode = ParentNode.transform.GetChild(ParentNode.transform.childCount - 2).GetComponent<Node>();
+            Nodeobj.transform.position = new Vector3(
+                Random.Range(-25.0f, 25.0f), 0.0f, Random.Range(-25.0f, 25.0f));
+            float Distance = 1000.0f;
 
+            if(ParentNode.transform.childCount > 1)
+            {
+                Node PreviousNode = ParentNode.transform.GetChild(
+                    ParentNode.transform.childCount - 2).GetComponent<Node>();
 
-            GameObject FirstObj = GameObject.Find("Node " + 0);
-            Node FirstNode = FirstObj.GetComponent<Node>();
-            FirstNode.NextNode = node;  
+                PreviousNode.NextNode = ParentNode.transform.GetChild(
+                    ParentNode.transform.childCount - 1).GetComponent<Node>();
+
+                CurrentNode.NextNode = ParentNode.transform.GetChild(0).GetComponent<Node>();
+
+                Distance = Vector3.Distance(
+                    PreviousNode.transform.position, CurrentNode.transform.position);
+            }
+            if (Distance > 1.5f)
+                break;
         }
     }
+
+   
+
 }
