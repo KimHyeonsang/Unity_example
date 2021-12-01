@@ -28,7 +28,7 @@ public class AudioPlayer : MonoBehaviour
     }
 
     public void StopSound()
-    {
+    {        
         SoundPlayer.Stop();
     }
 }
