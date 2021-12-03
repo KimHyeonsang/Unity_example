@@ -7,9 +7,13 @@ public class PlayerControllor : MonoBehaviour
     private float PlayerSpeed;
     private Animator Anime;
     private Rigidbody2D Rig;
+    public Camera mainCamera;
     private bool bJump;
+    public bool bDie;
+    public GameObject ENDUI;
     private void Awake()
     {
+     //   ENDUI = GameObject.Find("ButtonUI");
         Anime = transform.GetComponent<Animator>();
         Rig = transform.GetComponent<Rigidbody2D>();
     }
@@ -17,26 +21,50 @@ public class PlayerControllor : MonoBehaviour
     {
         PlayerSpeed = 10.0f;
         bJump = false;
-        Rig.gravityScale = 0.0f;
+        bDie = false;
     }
     void Update()
     {
-        transform.position += Vector3.right * PlayerSpeed * Time.deltaTime;
+        if (bDie == false)
+            transform.position += Vector3.right * PlayerSpeed * Time.deltaTime;
+        else
+        {
+            ENDUI.SetActive(true);
+        }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+     //   transform.position = mainCamera.transform.position;
+
+        if (transform.position.y < 0.0f)
+        {
+            bJump = false;
+            transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && bJump == false)
         {
             bJump = true;
-            Rig.gravityScale = 1.0f;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 8.0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 6.5f);
          
         }
 
-        if(transform.position.y < 0.0f)
-        {
-            bJump = false;
-            Rig.gravityScale = 0.0f;
-        }
+        
 
         Anime.SetBool("Jump", bJump); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        bDie = true;
+        
+        Anime.SetBool("Die", bDie);
+    }
+
+    public void RePlay()
+    {
+        Start();
+        transform.position = new Vector3(-7.0f, 0.0f, -2.0f);
+        ENDUI.SetActive(false);
+        Anime.SetBool("Jump", bJump);
+        Anime.SetBool("Die", bDie);
     }
 }

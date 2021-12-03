@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bolt DinoRun.unity
+    guid: d89a0726dd12d244d9cc4e105b3de1db
   m_configObjects: {}

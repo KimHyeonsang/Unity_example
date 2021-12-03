@@ -61,19 +61,20 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\BulletControllor.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\BackControllor.cs" />
+    <Compile Include="Assets\OnOff.cs" />
+    <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\PlayerControllor.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\PLayerControl.cs" />
     <Compile Include="Assets\SoundManager.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\AudioPlayer.cs" />
+    <Compile Include="Assets\Bolt 2D DinoRun VE1\ReadMe\Scripts\ReadmeVE1.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets\OnOff.cs" />
-    <Compile Include="Assets\Bolt 2D DinoRun VE1\ReadMe\Scripts\ReadmeVE1.cs" />
     <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\GameManager.cs" />
-    <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\BackControllor.cs" />
-    <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\PlayerControllor.cs" />
+    <Compile Include="Assets\Bolt 2D DinoRun VE1\Sprites\text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
@@ -681,6 +682,10 @@
       <Project>{B80CBAA2-6FF0-BD40-43FC-3014B88CB8C4}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{F3E56513-FF39-39AB-4313-9C14575DE12D}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{655BE4E2-0116-CDB8-45E6-BEC1B3B9D09F}</Project>
       <Name>UnityEditor.UI</Name>
@@ -696,10 +701,6 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{ADFE6365-6A47-C208-E26F-6AD4DF870E50}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{F3E56513-FF39-39AB-4313-9C14575DE12D}</Project>
-      <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
