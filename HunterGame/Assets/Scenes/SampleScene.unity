@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -189,9 +189,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 36
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &161967593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -440,8 +440,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.521294, z: 1.4585857}
+  m_Center: {x: 0, y: -0.26064712, z: -0.22929287}
 --- !u!23 &356237280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &435090273
@@ -552,8 +552,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.274169, z: 1.6212695}
+  m_Center: {x: 0, y: -0.13708448, z: 0.31063473}
 --- !u!23 &435090275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &705507993
@@ -1110,8 +1110,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.2970928, z: 1.4140953}
+  m_Center: {x: -1.3477631e-17, y: -0.14854652, z: 0.2070477}
 --- !u!23 &1240461467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1248683586
@@ -1427,8 +1427,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.440614, z: 1.6376462}
+  m_Center: {x: -8.579892e-17, y: -0.22030723, z: -0.31882316}
 --- !u!23 &1531655987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1505,7 +1505,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1542654914
