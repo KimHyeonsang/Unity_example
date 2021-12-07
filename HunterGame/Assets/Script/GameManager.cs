@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager
-{
-    public int JumbiCount;
-    void Start()
+{    
+    static private GameManager Instance;
+    static public GameManager GetInstance
     {
-        JumbiCount = 20;
-    }
+        get
+        {
+            if (Instance == null)
+                Instance = new GameManager();
 
-    void Update()
-    {
-        
+            return Instance;
+        }
     }
+    
 }

@@ -15,17 +15,13 @@ public class Potal : MonoBehaviour
         // ** 좀비 최대 소환수 
         MaxZombiNumber = 20;
 
-       //인보크
+        //인보크
+        InvokeRepeating("CountSpawnDelay", 5.0f,5.0f);
     }
 
-    private void Update()
-    {
-        StartCoroutine("CountSpawnDelay");
-    }
 
-    IEnumerator CountSpawnDelay()
-    {
-        
+    public void CountSpawnDelay()
+    {        
         if(iNumber < MaxZombiNumber)
         {
             GameObject Obj = Instantiate(Zombi);
@@ -47,6 +43,9 @@ public class Potal : MonoBehaviour
             
             ++iNumber;
         }
-        yield return new WaitForSeconds(iTime);
+        else
+        {
+            CancelInvoke("CountSpawnDelay");
+        }
     }
 }

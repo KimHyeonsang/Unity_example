@@ -21,4 +21,7 @@ public class EnumyControl : MonoBehaviour
         transform.Translate(Vector3.right * Speed * Time.deltaTime);
         Anime.SetBool("Walk", bWalk);
     }
+
+   
+    
 }
