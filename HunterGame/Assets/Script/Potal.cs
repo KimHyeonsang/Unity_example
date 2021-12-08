@@ -31,13 +31,13 @@ public class Potal : MonoBehaviour
             switch(num)
             {
                 case 1:
-                    Obj.transform.position = new Vector3(transform.position.x,-2.0f,7.0f);
+                    Obj.transform.position = new Vector3(transform.position.x,-10.0f,-9.0f);
                     break;
                 case 2:
-                    Obj.transform.position = new Vector3(transform.position.x, -9.0f, 6.0f);
+                    Obj.transform.position = new Vector3(transform.position.x, -15.0f,-9.0f);
                     break;
                 case 3:
-                    Obj.transform.position = new Vector3(transform.position.x, -16.0f, 5.0f);
+                    Obj.transform.position = new Vector3(transform.position.x, -20.0f,-9.0f);
                     break;
             }
             

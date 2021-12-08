@@ -26,7 +26,7 @@ public class RayPoint : MonoBehaviour
             RaycastHit hit;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            
             // public static bool Raycast(Vector3 origin, Vector3 direction, float maxDistance, int layerMask);
             /*
              Vector3 origin, Ω√¿€¡°

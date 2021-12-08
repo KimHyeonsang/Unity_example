@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Target
+  - Player3
+  - Player2
+  - Player1
   layers:
   - Default
   - TransparentFX
