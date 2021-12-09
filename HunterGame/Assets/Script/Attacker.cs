@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    private GameObject Frefab;
-   
-    private void Awake()
-    {
-    //    Frefab = Resources.Load("Frefabs/Bird 4 Yellow_0") as GameObject;
-        
-    }
+    public int Attack;
+    public int Hart;
+    private EnumyControl Enumy;
+
     void Start()
-    {
-        
+    {        
+        Hart = 300;
+        Attack = 10;
     }
     void Update()
     {
-     //   transform.Translate(Input.GetTouch(0).deltaPosition * Time.deltaTime);
+        
     }
 
-    // ** ¼ÒÈ¯
-    public void PlayerSpowns()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Frefab = Resources.Load("Frefabs/Bird 4 Yellow_0") as GameObject;
-        GameObject Obj = Instantiate(Frefab);
-        Obj.transform.position = new Vector3(0,-10.0f,-9.0f);
-                
+        
+        if (collision.transform.tag == "PlayerSpawn")
+        {
+            Debug.Log(collision.transform.tag);
+            GameObject Obj = GameObject.FindGameObjectWithTag("PlayerSpawn");
+            Obj.SetActive(false);
+        }
     }
+ //   private void OnCollisionStay2D(Collision2D collision)
+ //   {
+ //       Debug.Log(collision.transform.tag);
+ //       if(collision.transform.tag == "Target")
+ //       {
+ //           if (Hart > 0)
+ //           {
+ //               Hart -= GameManager.GetInstance.Attack;
+ //               Debug.Log(Hart);
+ //           }
+ //           else
+ //               Destroy(this);
+ //       }
+ //       
+ //   }
+
 }
