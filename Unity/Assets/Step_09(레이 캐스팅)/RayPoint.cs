@@ -26,7 +26,8 @@ public class RayPoint : MonoBehaviour
             RaycastHit hit;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            
+
+            Debug.Log(ray);
             // public static bool Raycast(Vector3 origin, Vector3 direction, float maxDistance, int layerMask);
             /*
              Vector3 origin, Ω√¿€¡°
@@ -37,6 +38,7 @@ public class RayPoint : MonoBehaviour
              */
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
+                Debug.Log("1");
                 GameObject Obj = Instantiate(CubePrefab);
                 Obj.transform.position = hit.point;
                 //(Vector3 start, Vector3 end, Color color);
