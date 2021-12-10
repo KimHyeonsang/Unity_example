@@ -88,6 +88,7 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
             BoxCollider2D Box2D = Obj.GetComponent<BoxCollider2D>();
             Box2D.size = new Vector2(5.0f, 4.0f);
+            Box2D.isTrigger = true;
         }
         else // ** collider충돌이 안되는 경우
         {

@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Potal : MonoBehaviour
 {
+    // 좀비만 소환하는 포탈 및 능력치 
+
     [SerializeField] private GameObject Zombi;
     private int MaxZombiNumber;
-    private int iTime = 5;
     private int iNumber = 0;
+    public string EnemyName;
+    public int Hp;
+    public int Dmg;
+    public int AtkSpeed;
+
     private void Start()
     {
         Zombi = Resources.Load("Frefabs/Zombie") as GameObject;
 
-        // ** 좀비 최대 소환수 
         MaxZombiNumber = 20;
-
         //인보크
         InvokeRepeating("CountSpawnDelay", 5.0f,5.0f);
     }
@@ -24,8 +28,9 @@ public class Potal : MonoBehaviour
     {        
         if(iNumber < MaxZombiNumber)
         {
+            // ** 몬스터 추가 예정
             GameObject Obj = Instantiate(Zombi);
-
+            SetEnumeyStatus("Zombi", 300, 50, 2);
             int num = Random.Range(1, 4);
 
             switch(num)
@@ -40,12 +45,20 @@ public class Potal : MonoBehaviour
                     Obj.transform.position = new Vector3(transform.position.x, -20.0f,-9.0f);
                     break;
             }
-            
             ++iNumber;
         }
         else
         {
             CancelInvoke("CountSpawnDelay");
+            
         }
+    }
+
+    private void SetEnumeyStatus(string _enemyName,int _Hp,int _Dmg , int _atkSpeed)
+    {
+        EnemyName = _enemyName;
+        Hp = _Hp;
+        Dmg = _Dmg;
+        AtkSpeed = _atkSpeed;
     }
 }

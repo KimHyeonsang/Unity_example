@@ -48,7 +48,7 @@ public class WayPointManager : MonoBehaviour
 
         TargetPoint = new Vector3(0.0f, 0.0f,0.0f);
 
-        for(int i = 0;i < 1; ++i)
+        for(int i = 0;i < 2; ++i)
         {
             GameObject Obj = Instantiate(WayPointList);
 

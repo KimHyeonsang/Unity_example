@@ -6,10 +6,13 @@ public class Attacker : MonoBehaviour
 {
     public int Attack;
     public int Hart;
-    private EnumyControl Enumy;
+    public GameObject OtherObject;
+    public Potal enumy;
 
     void Start()
-    {        
+    {
+        OtherObject = GameObject.Find("JumbiPotal");
+        enumy = OtherObject.GetComponent<Potal>();
         Hart = 300;
         Attack = 10;
     }
@@ -18,30 +21,62 @@ public class Attacker : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.transform.tag == "PlayerSpawn")
         {
-            Debug.Log(collision.transform.tag);
-            GameObject Obj = GameObject.FindGameObjectWithTag("PlayerSpawn");
-            Obj.SetActive(false);
+            GameObject[] Obj = GameObject.FindGameObjectsWithTag("PlayerSpawn");
+
+            for (int i = 0; i < Obj.Length; ++i)
+            {
+                if (Obj[i].transform.position == collision.transform.position)
+                {
+                    Obj[i].SetActive(false);
+                }
+            }
         }
     }
- //   private void OnCollisionStay2D(Collision2D collision)
- //   {
- //       Debug.Log(collision.transform.tag);
- //       if(collision.transform.tag == "Target")
- //       {
- //           if (Hart > 0)
- //           {
- //               Hart -= GameManager.GetInstance.Attack;
- //               Debug.Log(Hart);
- //           }
- //           else
- //               Destroy(this);
- //       }
- //       
- //   }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+        if (collision.transform.tag == "Target")
+        {
+
+            GameObject[] Obj = GameObject.FindGameObjectsWithTag("Target");
+
+            for (int i = 0; i < Obj.Length; ++i)
+            {
+                if (Obj[i].transform.position == collision.transform.position)
+                {
+                    InvokeRepeating("Hit", 5,5);
+                }
+            }
+            
+        }
+       
+    }
+
+    private void Hit()
+    {
+        if (Hart > 0)
+        {
+            Hart -= enumy.Dmg;
+        }
+        else
+        {
+           
+            GameObject[] Obj = GameObject.FindGameObjectsWithTag("PlayerSpawn");
+
+            for (int i = 0; i < Obj.Length; ++i)
+            {
+                if (Obj[i].transform.position == transform.position)
+                {
+                    Obj[i].SetActive(true);
+                }
+            }
+            Destroy(gameObject);
+            
+        }
+    }
 }

@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager
+public class GameManager : MonoBehaviour
 {    
     static private GameManager Instance;
-    public int Hart;
-    public int Attack;
+    
     static public GameManager GetInstance
     {
         get

@@ -9,11 +9,12 @@ public class EnumyControl : MonoBehaviour
     private Animator Anime;
     private bool bWalk;
     private bool bAttack;
+
+    public Potal potal;
     void Start()
     {
         Speed = 2.0f;
-        GameManager.GetInstance.Hart = 150;
-        GameManager.GetInstance.Attack = 50;
+       
         Anime = GetComponent<Animator>();
         transform.Rotate(new Vector3(0, 180, 0));
         bWalk = true;
@@ -26,19 +27,27 @@ public class EnumyControl : MonoBehaviour
             transform.Translate(Vector3.right * Speed * Time.deltaTime);
 
         Anime.SetBool("Walk", bWalk);
-        Anime.SetBool("Attack", bAttack);
+   //     Anime.SetBool("Attack", bAttack);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
             bAttack = true;
+            Anime.SetBool("Attack", bAttack);
             bWalk = false;
-        }        
+            InvokeRepeating("Attack", 2,2);
+        }
+        else
+        {
+            bWalk = true;
+        }
     }
 
-    public int Attacting()
+    private void Attack()
     {
-        return GameManager.GetInstance.Attack;
+        bAttack = false;
+        Anime.SetBool("Attack", bAttack);
+        
     }
 }
