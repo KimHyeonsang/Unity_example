@@ -50,7 +50,7 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             if(results[i].gameObject.tag == "Player1")
             {
                 Frefab = Resources.Load("Frefabs/B1 Red Sheet_0") as GameObject;
-                Obj = Instantiate(Frefab);
+                Obj = Instantiate(Frefab);                
             }
             if (results[i].gameObject.tag == "Player2")
             {
@@ -72,31 +72,35 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     
         RaycastHit2D Hit = Physics2D.Raycast(Pos, Vector2.zero, -9.0f);
        
-        // ** 물체의 collider가 있을 경우 충돌이 될 경우
-        if (Hit.collider != null)
+        // 부딪히면
+        if(Hit.transform.tag == "PlayerSpawn")
         {
-            // ** 색상
-            SpriteRenderer SpriteRender = Obj.GetComponent<SpriteRenderer>();
-            Color matColor = SpriteRender.color;
-            // 투명도 1도 조절
-            matColor.a = 1.0f;
-            SpriteRender.color = matColor;
+            // ** 물체의 collider가 있을 경우 충돌이 될 경우
+            if (Hit.collider != null)
+            {
+                // ** 색상
+                SpriteRenderer SpriteRender = Obj.GetComponent<SpriteRenderer>();
+                Color matColor = SpriteRender.color;
+                // 투명도 1도 조절
+                matColor.a = 1.0f;
+                SpriteRender.color = matColor;
 
-            // ** 놓은 곳에 위치한 collider쪽에 위치
-            Obj.transform.position = Hit.transform.position;
-            Obj.AddComponent<BoxCollider2D>();
+                // ** 놓은 곳에 위치한 collider쪽에 위치
+                Obj.transform.position = Hit.transform.position;
 
-            BoxCollider2D Box2D = Obj.GetComponent<BoxCollider2D>();
-            Box2D.size = new Vector2(5.0f, 4.0f);
-            Box2D.isTrigger = true;
-        }
+                // ** collider 생성
+                Obj.AddComponent<BoxCollider2D>();
+
+                BoxCollider2D Box2D = Obj.GetComponent<BoxCollider2D>();
+                // ** Collider의 크기 설정
+                Box2D.size = new Vector2(5.0f, 4.0f);
+                Box2D.isTrigger = true;
+            }
+        }        
         else // ** collider충돌이 안되는 경우
         {
             // ** 오브젝트 파괴
             Destroy(Obj);
-        }
-
-
-        
+        }        
     }
 }

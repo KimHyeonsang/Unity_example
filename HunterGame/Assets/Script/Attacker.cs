@@ -6,15 +6,15 @@ public class Attacker : MonoBehaviour
 {
     public int Attack;
     public int Hart;
-    public GameObject OtherObject;
-    public Potal enumy;
+    public int Cost;
+    //  ** 삭제 시킨 오브젝트 저장
+    private GameObject RemoveObject;
 
     void Start()
-    {
-        OtherObject = GameObject.Find("JumbiPotal");
-        enumy = OtherObject.GetComponent<Potal>();
+    {        
         Hart = 300;
         Attack = 10;
+        Cost = 15;
     }
     void Update()
     {
@@ -26,57 +26,29 @@ public class Attacker : MonoBehaviour
         if (collision.transform.tag == "PlayerSpawn")
         {
             GameObject[] Obj = GameObject.FindGameObjectsWithTag("PlayerSpawn");
-
+    
             for (int i = 0; i < Obj.Length; ++i)
             {
                 if (Obj[i].transform.position == collision.transform.position)
                 {
+                    RemoveObject = Obj[i];
                     Obj[i].SetActive(false);
                 }
             }
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
+    }       
+    public void Hit(int _Dmg)
     {
-        
-        if (collision.transform.tag == "Target")
-        {
-
-            GameObject[] Obj = GameObject.FindGameObjectsWithTag("Target");
-
-            for (int i = 0; i < Obj.Length; ++i)
-            {
-                if (Obj[i].transform.position == collision.transform.position)
-                {
-                    InvokeRepeating("Hit", 5,5);
-                }
-            }
-            
-        }
-       
-    }
-
-    private void Hit()
-    {
+        // ** 체력이 0 이상일 때
         if (Hart > 0)
         {
-            Hart -= enumy.Dmg;
+            Hart -= _Dmg;
         }
         else
         {
-           
-            GameObject[] Obj = GameObject.FindGameObjectsWithTag("PlayerSpawn");
-
-            for (int i = 0; i < Obj.Length; ++i)
-            {
-                if (Obj[i].transform.position == transform.position)
-                {
-                    Obj[i].SetActive(true);
-                }
-            }
-            Destroy(gameObject);
-            
+            // ** 지운 오브젝트 활성화
+            RemoveObject.SetActive(true);
+            Destroy(gameObject);            
         }
     }
 }

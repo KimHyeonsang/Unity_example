@@ -9,12 +9,15 @@ public class EnumyControl : MonoBehaviour
     private Animator Anime;
     private bool bWalk;
     private bool bAttack;
-
+    [Tooltip("공격쿨타임")]
+    private float CoolTime;
+    [Tooltip("현재 쿨타임")]
+    private float CurTime;
     public Potal potal;
     void Start()
     {
         Speed = 2.0f;
-       
+        CoolTime = 1.6f;
         Anime = GetComponent<Animator>();
         transform.Rotate(new Vector3(0, 180, 0));
         bWalk = true;
@@ -27,27 +30,44 @@ public class EnumyControl : MonoBehaviour
             transform.Translate(Vector3.right * Speed * Time.deltaTime);
 
         Anime.SetBool("Walk", bWalk);
-   //     Anime.SetBool("Attack", bAttack);
+        Anime.SetBool("Attack", bAttack);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(CurTime <= 0)
         {
-            bAttack = true;
-            Anime.SetBool("Attack", bAttack);
-            bWalk = false;
-            InvokeRepeating("Attack", 2,2);
+            if (collision.transform.tag == "Player")
+            {
+                bAttack = true;
+                bWalk = false;
+                // 충돌체의 오브젝트 불러오기
+                GameObject Obj = collision.gameObject;
+                
+                // 오브젝트의 스크립트 불러오기
+                PlayerManager.Getinstace.FindPlayer(Obj,50);
+
+            }
+            CurTime = CoolTime;
         }
         else
         {
+            CurTime -= Time.deltaTime;
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
             bWalk = true;
+            bAttack = false;
         }
     }
 
-    private void Attack()
-    {
-        bAttack = false;
-        Anime.SetBool("Attack", bAttack);
-        
-    }
 }
