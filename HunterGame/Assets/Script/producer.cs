@@ -5,7 +5,6 @@ using UnityEngine;
 public class producer : MonoBehaviour
 {
     public int Hart;
-    public int Cost;
     private GameObject RemoveObject;
 
     [SerializeField] private GameObject Coin;
@@ -32,7 +31,7 @@ public class producer : MonoBehaviour
             GameObject CoinObj = Instantiate(Coin);
 
             CoinObj.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
-            CoolTime = Random.Range(5, 11);
+            CoolTime = Random.Range(5, 8);
             CurTime = CoolTime;
         }
         else

@@ -19,7 +19,7 @@ public class Potal : MonoBehaviour
 
         MaxZombiNumber = 20;
         //¿Œ∫∏≈©
-        InvokeRepeating("CountSpawnDelay", 5.0f,5.0f);
+        InvokeRepeating("CountSpawnDelay", 10.0f,10.0f);
     }
 
 

@@ -129,12 +129,24 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         if (SelectedObj.tag == "Player2")
         {
             Cost = 150;
-            Obj.AddComponent<Attacker>();
+            if (GameObject.Find("Cost").GetComponent<TextCost>().Cost >= Cost)
+            {
+                GameObject.Find("Cost").GetComponent<TextCost>().Cost -= Cost;
+                Obj.AddComponent<Attacker>();                
+            }
+            else
+                Destroy(Obj);
         }
         if (SelectedObj.tag == "Player3")
         {
             Cost = 200;
-            Obj.AddComponent<Tanker>();
+            if (GameObject.Find("Cost").GetComponent<TextCost>().Cost >= Cost)
+            {
+                GameObject.Find("Cost").GetComponent<TextCost>().Cost -= Cost;
+                Obj.AddComponent<Tanker>();
+            }
+            else
+                Destroy(Obj);            
         }
     }
 }
