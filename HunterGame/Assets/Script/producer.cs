@@ -7,16 +7,38 @@ public class producer : MonoBehaviour
     public int Hart;
     public int Cost;
     private GameObject RemoveObject;
+
+    [SerializeField] private GameObject Coin;
+    [Tooltip("생산쿨타임")]
+    private float CoolTime;
+    [Tooltip("현재 쿨타임")]
+    private float CurTime;
+
+   
     void Start()
     {
-        Hart = 350;
-        Cost = 200;
+        Hart = 200;
+       
+        CoolTime = Random.Range(5,11);
+        Coin = Resources.Load("Frefabs/Coin") as GameObject;
+        CurTime = CoolTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // 5~10초 사이로 코인을 생산
+        if (CurTime <= 0)
+        {
+            GameObject CoinObj = Instantiate(Coin);
+
+            CoinObj.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
+            CoolTime = Random.Range(5, 11);
+            CurTime = CoolTime;
+        }
+        else
+        {
+            CurTime -= Time.deltaTime;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,7 +63,8 @@ public class producer : MonoBehaviour
         {
             Hart -= _Dmg;
         }
-        else
+        
+        if(Hart <= 0)
         {
             // ** 지운 오브젝트 활성화
             RemoveObject.SetActive(true);

@@ -10,6 +10,8 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     private List<RaycastResult> raycastResults;
     private GraphicRaycaster gr;
 
+    private GameObject SelectedObj;
+
     private void Awake() 
     { 
         gr = GetComponent<GraphicRaycaster>(); 
@@ -49,16 +51,19 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         {
             if(results[i].gameObject.tag == "Player1")
             {
+                SelectedObj = results[i].gameObject;
                 Frefab = Resources.Load("Frefabs/B1 Red Sheet_0") as GameObject;
                 Obj = Instantiate(Frefab);                
             }
             if (results[i].gameObject.tag == "Player2")
             {
+                SelectedObj = results[i].gameObject;
                 Frefab = Resources.Load("Frefabs/Bird5_LightYellow") as GameObject;
                 Obj = Instantiate(Frefab);
             }
             if (results[i].gameObject.tag == "Player3")
             {
+                SelectedObj = results[i].gameObject;
                 Frefab = Resources.Load("Frefabs/Bird 4 Yellow_0") as GameObject;
                 Obj = Instantiate(Frefab);
             }
@@ -71,12 +76,13 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         Vector2 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     
         RaycastHit2D Hit = Physics2D.Raycast(Pos, Vector2.zero, -9.0f);
-       
+
         // 부딪히면
-        if(Hit.transform.tag == "PlayerSpawn")
+       
+        // ** 물체의 collider가 있을 경우 충돌이 될 경우
+        if (Hit.collider != null)
         {
-            // ** 물체의 collider가 있을 경우 충돌이 될 경우
-            if (Hit.collider != null)
+            if (Hit.transform.tag == "PlayerSpawn")
             {
                 // ** 색상
                 SpriteRenderer SpriteRender = Obj.GetComponent<SpriteRenderer>();
@@ -95,6 +101,8 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 // ** Collider의 크기 설정
                 Box2D.size = new Vector2(5.0f, 4.0f);
                 Box2D.isTrigger = true;
+
+                SelectPlayer();
             }
         }        
         else // ** collider충돌이 안되는 경우
@@ -102,5 +110,31 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
             // ** 오브젝트 파괴
             Destroy(Obj);
         }        
+    }
+
+    private void SelectPlayer()
+    {
+        int Cost;
+        if (SelectedObj.tag == "Player1")
+        {
+            Cost = 100;
+            if (GameObject.Find("Cost").GetComponent<TextCost>().Cost >= Cost)
+            {
+                GameObject.Find("Cost").GetComponent<TextCost>().Cost -= Cost;
+                Obj.AddComponent<producer>();
+            }
+            else
+                Destroy(Obj);
+        }
+        if (SelectedObj.tag == "Player2")
+        {
+            Cost = 150;
+            Obj.AddComponent<Attacker>();
+        }
+        if (SelectedObj.tag == "Player3")
+        {
+            Cost = 200;
+            Obj.AddComponent<Tanker>();
+        }
     }
 }

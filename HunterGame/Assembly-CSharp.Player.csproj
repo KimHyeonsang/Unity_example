@@ -53,14 +53,18 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\producer.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\EnumyControl.cs" />
     <Compile Include="Assets\Script\Potal.cs" />
     <Compile Include="Assets\25 sprite effects\Animation_seq.cs" />
+    <Compile Include="Assets\Script\Tanker.cs" />
     <Compile Include="Assets\Script\PlayerManager.cs" />
     <Compile Include="Assets\Script\Attacker.cs" />
     <Compile Include="Assets\Script\InputSystem.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\CoinControl.cs" />
+    <Compile Include="Assets\Script\TextCost.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2D Zombie\Shader\Spine-Skeleton.shader" />

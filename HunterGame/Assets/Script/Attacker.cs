@@ -6,7 +6,6 @@ public class Attacker : MonoBehaviour
 {
     public int Attack;
     public int Hart;
-    public int Cost;
     //  ** 삭제 시킨 오브젝트 저장
     private GameObject RemoveObject;
 
@@ -14,7 +13,6 @@ public class Attacker : MonoBehaviour
     {        
         Hart = 300;
         Attack = 10;
-        Cost = 15;
     }
     void Update()
     {
@@ -44,11 +42,12 @@ public class Attacker : MonoBehaviour
         {
             Hart -= _Dmg;
         }
-        else
+
+        if (Hart <= 0)
         {
             // ** 지운 오브젝트 활성화
             RemoveObject.SetActive(true);
-            Destroy(gameObject);            
+            Destroy(gameObject);
         }
     }
 }

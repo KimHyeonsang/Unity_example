@@ -23,6 +23,6 @@ public class PlayerManager
         else if(_Obj.name == "Bird5_LightYellow(Clone)")
             _Obj.GetComponent<Tanker>().Hit(_Dmg);
         else if (_Obj.name == "B1 Red Sheet_0(Clone)")
-            _Obj.GetComponent<Tanker>().Hit(_Dmg);
+            _Obj.GetComponent<producer>().Hit(_Dmg);
     }
 }
