@@ -8,10 +8,7 @@ public class Potal : MonoBehaviour
     [SerializeField] private GameObject Zombi;
     private int MaxZombiNumber;
     private int iNumber = 0;
-    public string EnemyName;
-    public int Hp;
-    public int Dmg;
-    public int AtkSpeed;
+    
 
     private void Start()
     {
@@ -29,7 +26,6 @@ public class Potal : MonoBehaviour
         {
             // ** 몬스터 추가 예정
             GameObject Obj = Instantiate(Zombi);
-            SetEnumeyStatus("Zombi", 300, 50, 2);
             int num = Random.Range(1, 4);
 
             switch(num)
@@ -38,10 +34,10 @@ public class Potal : MonoBehaviour
                     Obj.transform.position = new Vector3(transform.position.x,-10.0f,-9.0f);
                     break;
                 case 2:
-                    Obj.transform.position = new Vector3(transform.position.x, -15.0f,-9.0f);
+                    Obj.transform.position = new Vector3(transform.position.x, -16.0f,-9.0f);
                     break;
                 case 3:
-                    Obj.transform.position = new Vector3(transform.position.x, -20.0f,-9.0f);
+                    Obj.transform.position = new Vector3(transform.position.x, -22.0f,-9.0f);
                     break;
             }
             ++iNumber;
@@ -53,11 +49,4 @@ public class Potal : MonoBehaviour
         }
     }
 
-    private void SetEnumeyStatus(string _enemyName,int _Hp,int _Dmg , int _atkSpeed)
-    {
-        EnemyName = _enemyName;
-        Hp = _Hp;
-        Dmg = _Dmg;
-        AtkSpeed = _atkSpeed;
-    }
 }

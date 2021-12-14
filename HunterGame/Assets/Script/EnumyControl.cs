@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnumyControl : MonoBehaviour
 {
     private float Speed;
-   
+    public int Hart;
+    public int Dmg;
     private Animator Anime;
     private bool bWalk;
     private bool bAttack;
@@ -14,6 +15,7 @@ public class EnumyControl : MonoBehaviour
     [Tooltip("현재 쿨타임")]
     private float CurTime;
     public Potal potal;
+    private GameObject LifeObj;
     void Start()
     {
         Speed = 2.0f;
@@ -22,6 +24,8 @@ public class EnumyControl : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         bWalk = true;
         bAttack = false;
+        Hart = 300;
+        Dmg = 50;
     }
 
     void Update()
@@ -29,14 +33,19 @@ public class EnumyControl : MonoBehaviour
         if(bWalk == true)
             transform.Translate(Vector3.right * Speed * Time.deltaTime);
 
+        
         Anime.SetBool("Walk", bWalk);
         Anime.SetBool("Attack", bAttack);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.transform.tag == "NomalBullet")
+        {
 
+        }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(CurTime <= 0)
@@ -49,8 +58,15 @@ public class EnumyControl : MonoBehaviour
                 GameObject Obj = collision.gameObject;
                 
                 // 오브젝트의 스크립트 불러오기
-                PlayerManager.Getinstace.FindPlayer(Obj,50);
+                PlayerManager.Getinstace.FindPlayer(Obj, Dmg);
 
+            }
+            else if (collision.transform.tag == "PlayerLife")
+            {
+                bAttack = true;
+                bWalk = false;
+                LifeObj = collision.gameObject;
+                LifeObj.GetComponent<PlayerLife>().LifeDestroy();
             }
             CurTime = CoolTime;
         }
@@ -63,11 +79,23 @@ public class EnumyControl : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" || collision.transform.tag == "PlayerLife")
         {
             bWalk = true;
             bAttack = false;
         }
     }
+    public void Hit(int _Dmg)
+    {
+        // ** 체력이 0 이상일 때
+        if (Hart > 0)
+        {
+            Hart -= _Dmg;
+        }
 
+        if (Hart <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

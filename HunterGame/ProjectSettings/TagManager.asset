@@ -11,6 +11,8 @@ TagManager:
   - Player1
   - PlayerSpawn
   - Coin
+  - PlayerLife
+  - NomalBullet
   layers:
   - Default
   - TransparentFX
