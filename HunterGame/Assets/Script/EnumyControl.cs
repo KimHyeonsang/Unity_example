@@ -10,6 +10,7 @@ public class EnumyControl : MonoBehaviour
     private Animator Anime;
     private bool bWalk;
     private bool bAttack;
+    private bool bHit;
     [Tooltip("공격쿨타임")]
     private float CoolTime;
     [Tooltip("현재 쿨타임")]
@@ -24,6 +25,7 @@ public class EnumyControl : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         bWalk = true;
         bAttack = false;
+        bHit = false;
         Hart = 300;
         Dmg = 50;
     }
@@ -42,7 +44,8 @@ public class EnumyControl : MonoBehaviour
     {
         if(collision.transform.tag == "NomalBullet")
         {
-
+            bHit = true;
+            Anime.SetBool("Hurt", bHit);
         }
     }
 
@@ -83,6 +86,11 @@ public class EnumyControl : MonoBehaviour
         {
             bWalk = true;
             bAttack = false;
+        }
+        if (collision.transform.tag == "NomalBullet")
+        {
+            bHit = false;
+            Anime.SetBool("Hurt", bHit);
         }
     }
     public void Hit(int _Dmg)

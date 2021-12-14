@@ -9,7 +9,7 @@ public class NomalBullet : MonoBehaviour
     private GameObject Target;
     void Start()
     {
-        Speed = 20.0f;
+        Speed = 10.0f;
     }
 
     void Update()
