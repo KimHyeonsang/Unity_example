@@ -7,7 +7,7 @@ public class Potal : MonoBehaviour
     // 좀비만 소환하는 포탈 및 능력치 
     [SerializeField] private GameObject Zombi;
     private int MaxZombiNumber;
-    private int iNumber = 0;
+    public int iNumber = 0;
     
 
     private void Start()

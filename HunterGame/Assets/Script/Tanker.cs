@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Tanker : MonoBehaviour
 {
-    public int Hart;
-    
+    public int Hart;    
     //  ** 삭제 시킨 오브젝트 저장
     private GameObject RemoveObject;
     void Start()

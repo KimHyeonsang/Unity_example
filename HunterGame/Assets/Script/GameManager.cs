@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {    
     static private GameManager Instance;
-    
+    public List<GameObject> PlayerList;
     static public GameManager GetInstance
     {
         get
@@ -16,5 +17,5 @@ public class GameManager : MonoBehaviour
 
             return Instance;
         }
-    }  
+    }   
 }
