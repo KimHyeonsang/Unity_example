@@ -5,7 +5,7 @@ using UnityEngine;
 public class producer : MonoBehaviour
 {
     public int Hart;
-    private GameObject RemoveObject;
+    public GameObject RemoveObject;
 
     [SerializeField] private GameObject Coin;
     [Tooltip("생산쿨타임")]
@@ -32,6 +32,7 @@ public class producer : MonoBehaviour
 
             CoinObj.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
             CoolTime = Random.Range(5, 8);
+            GameManager.GetInstance.CoinList.Add(CoinObj);
             CurTime = CoolTime;
         }
         else

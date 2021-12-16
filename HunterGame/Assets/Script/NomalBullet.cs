@@ -7,17 +7,34 @@ public class NomalBullet : MonoBehaviour
     private float Speed;
     private int Dmg;
     private GameObject Target;
+    private bool life;
     void Start()
     {
-        Speed = 10.0f;
+        Speed = 5.0f;
+        
     }
 
     void Update()
     {
-        Vector3 vec =  Target.transform.position - transform.position;
-        vec.Normalize();
+        life = false;
+        GameObject[] Obj = GameObject.FindGameObjectsWithTag("Target");
 
-        transform.position = transform.position + vec;
+        for (int i = 0; i < Obj.Length; ++i)
+        {
+            if (Obj[i].transform.position == Target.transform.position)
+            {
+                life = true;
+            }
+        }
+        if (life == false)
+            Destroy(gameObject);
+        else
+        {
+            Vector3 vec = Target.transform.position - transform.position;
+            vec.Normalize();
+
+            transform.position = transform.position + vec;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

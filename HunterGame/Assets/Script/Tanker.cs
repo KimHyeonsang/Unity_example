@@ -6,7 +6,7 @@ public class Tanker : MonoBehaviour
 {
     public int Hart;    
     //  ** 삭제 시킨 오브젝트 저장
-    private GameObject RemoveObject;
+    public GameObject RemoveObject;
     void Start()
     {
         Hart = 2000;

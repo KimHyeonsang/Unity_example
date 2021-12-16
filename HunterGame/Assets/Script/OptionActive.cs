@@ -42,8 +42,34 @@ public class OptionActive : MonoBehaviour
         TextCost Cost = GameObject.Find("Cost").GetComponent<TextCost>();
         Cost.Cost = 100;
 
-    //    GameManager.GetInstance.PlayerList.Clear();
+        for(int i=0;i< GameManager.GetInstance.GetPlayerList.Count; ++i)
+        {
+            // 플레이어 지우기   
+            Destroy(GameManager.GetInstance.GetPlayerList[i]);
 
+        }
+        for(int i=0;i < GameManager.GetInstance.EnemyList.Count;++i)
+        {
+            // 적군 지우기
+            Destroy(GameManager.GetInstance.EnemyList[i]);
+        }       
+
+        // 플레이어 소환 가능 장소 리셋
+        for (int i = 0; i < GameManager.GetInstance.SpawnList.Count; ++i)
+        {
+            // 돌리기
+            GameManager.GetInstance.SpawnList[i].SetActive(true);
+        }
+
+        // 필드에 나와있는 코인 삭제
+        for (int i = 0; i < GameManager.GetInstance.CoinList.Count; ++i)
+        {            
+            Destroy(GameManager.GetInstance.CoinList[i]);
+        }
+
+        GameManager.GetInstance.EnemyList.Clear();
+        GameManager.GetInstance.GetPlayerList.Clear();
+        GameManager.GetInstance.CoinList.Clear();
         Action();
     }
 }
