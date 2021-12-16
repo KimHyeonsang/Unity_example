@@ -10,7 +10,7 @@ public class NomalBullet : MonoBehaviour
     private bool life;
     void Start()
     {
-        Speed = 5.0f;
+        Speed = 10.0f;
         
     }
 
@@ -33,7 +33,7 @@ public class NomalBullet : MonoBehaviour
             Vector3 vec = Target.transform.position - transform.position;
             vec.Normalize();
 
-            transform.position = transform.position + vec;
+            transform.Translate(vec * Speed * Time.deltaTime);
         }
     }
 

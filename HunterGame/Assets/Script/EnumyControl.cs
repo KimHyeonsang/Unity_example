@@ -96,7 +96,6 @@ public class EnumyControl : MonoBehaviour
         if (Hart <= 0)
         {
             GameManager.GetInstance.KillCount++;
-            Debug.Log(GameManager.GetInstance.KillCount);
             Destroy(gameObject);
 
             if(GameManager.GetInstance.KillCount == GameManager.GetInstance.MaxZombiNumber)
