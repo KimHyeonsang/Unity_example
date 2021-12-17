@@ -4,5 +4,107 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    
+    public GameObject VictoryUI;
+    public GameObject SpawnUI;
+    public GameObject OptionUI;
+    public GameObject LoseUI;
+
+
+    public void VictoryUiActive()
+    {
+        if(VictoryUI.activeSelf == true)
+        {
+            VictoryUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            VictoryUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+    public void SpawnUIActive()
+    {
+        if (SpawnUI.activeSelf == true)
+        {
+            SpawnUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            SpawnUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+    public void OptionUIActive()
+    {
+        if (OptionUI.activeSelf == true)
+        {
+            OptionUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            OptionUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void LoseUIActive()
+    {
+        if (LoseUI.activeSelf == true)
+        {
+            LoseUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            LoseUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ReStartScene()
+    {
+        // 초기화 목록  코인 기본가격,현재 좀비 소환 수 초기화,
+
+        Potal Jumbipotal = GameObject.Find("JumbiPotal").GetComponent<Potal>();
+        Jumbipotal.iNumber = 0;
+
+        TextCost Cost = GameObject.Find("Cost").GetComponent<TextCost>();
+        Cost.Cost = 100;
+
+        for (int i = 0; i < GameManager.GetInstance.GetPlayerList.Count; ++i)
+        {
+            // 플레이어 지우기   
+            Destroy(GameManager.GetInstance.GetPlayerList[i]);
+
+        }
+        for (int i = 0; i < GameManager.GetInstance.EnemyList.Count; ++i)
+        {
+            // 적군 지우기
+            Destroy(GameManager.GetInstance.EnemyList[i]);
+        }
+
+        // 플레이어 소환 가능 장소 리셋
+        for (int i = 0; i < GameManager.GetInstance.SpawnList.Count; ++i)
+        {
+            // 돌리기
+            GameManager.GetInstance.SpawnList[i].SetActive(true);
+        }
+
+        // 필드에 나와있는 코인 삭제
+        for (int i = 0; i < GameManager.GetInstance.CoinList.Count; ++i)
+        {
+            Destroy(GameManager.GetInstance.CoinList[i]);
+        }
+
+        GameManager.GetInstance.EnemyList.Clear();
+        GameManager.GetInstance.GetPlayerList.Clear();
+        GameManager.GetInstance.CoinList.Clear();
+        GameManager.GetInstance.AttackerCount = 0;
+        GameManager.GetInstance.TankerCount = 0;
+        GameManager.GetInstance.ProducerCount = 0;
+
+    }
 }

@@ -17,7 +17,9 @@ public class PlayerLife : MonoBehaviour
         else
         {
             Destroy(gameObject);
-
+            GameManager.GetInstance.bSecondStar = false;
+            UIManager UiObj = GameObject.Find("UiManager").GetComponent<UIManager>();
+            UiObj.LoseUIActive();
         }
 
         //gameover

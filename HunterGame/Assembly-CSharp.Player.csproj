@@ -57,11 +57,12 @@
     <Compile Include="Assets\Script\producer.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\PlayerLife.cs" />
-    <Compile Include="Assets\Script\OptionActive.cs" />
     <Compile Include="Assets\Script\EnumyControl.cs" />
     <Compile Include="Assets\Script\Potal.cs" />
     <Compile Include="Assets\Script\CoinControl.cs" />
     <Compile Include="Assets\Script\TextCost.cs" />
+    <Compile Include="Assets\Script\UIManager.cs" />
+    <Compile Include="Assets\Script\Vitory.cs" />
     <Compile Include="Assets\25 sprite effects\Animation_seq.cs" />
     <Compile Include="Assets\Script\Tanker.cs" />
     <Compile Include="Assets\Script\PlayerManager.cs" />
@@ -69,13 +70,17 @@
     <Compile Include="Assets\Script\InputSystem.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\ColliderSpawn.cs" />
-    <Compile Include="Assets\Script\Vitory.cs" />
+    <Compile Include="Assets\_Heathen Engineering\Samples\UX Examples\Flat Icons [Free]\ToggleSetAnimatorBoolean.cs" />
+    <Compile Include="Assets\Script\MainScene\Dia.cs" />
+    <Compile Include="Assets\Script\MainScene\Gold.cs" />
+    <Compile Include="Assets\Script\MainScene\Power.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2D Zombie\Shader\Spine-Skeleton.shader" />
     <None Include="Assets\2D Zombie\Spine2D Animations Exports\Zombie_Normal.atlas.txt" />
     <None Include="Assets\2D Zombie\Unity Native Animations\Zombie_Normal.atlas.txt" />
     <None Include="Assets\2DBirds_Pack3\Documentation 1\Documentation.txt" />
+    <None Include="Assets\_Heathen Engineering\Documentation\UX\Flat Icons [Free]\Read Me.txt" />
     <None Include="Assets\2D Zombie\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

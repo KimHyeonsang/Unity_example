@@ -8,18 +8,27 @@ public class CoinControl : MonoBehaviour
     // ** 코인의 가격
     private int Coin;
     [SerializeField] private GameObject Obj;
+
+    private GameObject victoryui;
     void Start()
     {
         bStartMove = false;
         Obj = GameObject.Find("SpwonCoin");
         Coin = 50;
+        UIManager UiObj = GameObject.Find("UiManager").GetComponent<UIManager>();
+        victoryui = UiObj.VictoryUI;
     }
 
     void Update()
     {
+        if (victoryui.activeSelf == true)
+        {
+            Destroy(gameObject);
+        }
+
         Vector2 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        RaycastHit2D Hit = Physics2D.Raycast(Pos, Vector2.zero, -10.0f);
+        RaycastHit2D Hit = Physics2D.Raycast(Pos, Vector2.zero, -9.0f);
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -50,6 +59,6 @@ public class CoinControl : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        
+                
     }
 }

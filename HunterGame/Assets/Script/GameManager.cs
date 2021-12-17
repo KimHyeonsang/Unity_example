@@ -21,6 +21,18 @@ public class GameManager
 
     public int MaxZombiNumber = 20;
     public int KillCount = 0;
+
+    public int inGameMoney = 0;
+    public int MaxPower = 150;
+    public int CurPower = 150;
+    public int Dia = 0;
+
+    // ** 2번째 클리어 조건
+    public bool bSecondStar = true;
+
+    public int AttackerCount = 0;
+    public int TankerCount = 0;
+    public int ProducerCount = 0;
     static public GameManager GetInstance
     {
         get

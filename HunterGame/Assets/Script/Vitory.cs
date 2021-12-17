@@ -5,37 +5,39 @@ using UnityEngine.UI;
 
 public class Vitory : MonoBehaviour
 {
-    public bool OneStar;
-    public bool TwoStar;
-    public bool TreeStar;
-
-    public Image firstImage;
+    public Image FirstImage;
+    public Image SecondImage;
+    public Image ThirdImage;
     public Sprite Star;
     void Start()
     {
-        OneStar = false;
-        TwoStar = false;
-        TreeStar = false;
-
-        GameObject Obj = GameObject.Find("SpownCanvas");
-        Obj.SetActive(false);
+        // 소환 목록
+        UIManager UiObj = GameObject.Find("UiManager").GetComponent<UIManager>();
+        UiObj.SpawnUIActive();
     }
 
     void Update()
     {
-        Time.timeScale = 0;
+        // ** 스테이지를 클리어 할 때
+        if (GameManager.GetInstance.KillCount >= GameManager.GetInstance.MaxZombiNumber)
+        {
+            FirstImage.sprite = Star;
 
+        }
 
-   //   if (GameManager.GetInstance.KillCount >= GameManager.GetInstance.MaxZombiNumber)
-   //   {
-   //       firstImage.sprite = Star;
-   //
-   //   }
+        // ** 플레이어의 목숨이 다 있을 경우
+        if (GameManager.GetInstance.bSecondStar == true)
+        {
+            SecondImage.sprite = Star;
+        }
+
+        // ** 생산자 갯수 6개 이하로 만들기
+        if (GameManager.GetInstance.ProducerCount <= 6)
+        {
+            ThirdImage.sprite = Star;
+        }
+
+        GameManager.GetInstance.inGameMoney += 50;
     }
 
-    public void OnVitory()
-    {
-        GameObject Obj = gameObject;
-        Obj.SetActive(true);
-    }
 }

@@ -96,11 +96,12 @@ public class EnumyControl : MonoBehaviour
         if (Hart <= 0)
         {
             GameManager.GetInstance.KillCount++;
-            Destroy(gameObject);
+            
 
             if(GameManager.GetInstance.KillCount == GameManager.GetInstance.MaxZombiNumber)
             {
-                Debug.Log("Å¬¸®¾î");
+                UIManager UiObj = GameObject.Find("UiManager").GetComponent<UIManager>();
+                UiObj.VictoryUiActive();
             }
         }
     }

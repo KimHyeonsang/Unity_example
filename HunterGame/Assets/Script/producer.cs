@@ -30,7 +30,7 @@ public class producer : MonoBehaviour
         {
             GameObject CoinObj = Instantiate(Coin);
 
-            CoinObj.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
+            CoinObj.transform.position = new Vector3(transform.position.x,transform.position.y,-10.0f);
             CoolTime = Random.Range(5, 8);
             GameManager.GetInstance.CoinList.Add(CoinObj);
             CurTime = CoolTime;
