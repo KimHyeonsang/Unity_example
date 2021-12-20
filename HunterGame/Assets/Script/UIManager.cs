@@ -105,9 +105,7 @@ public class UIManager : MonoBehaviour
     public void ReStartScene()
     {
         // 초기화 목록  코인 기본가격,현재 좀비 소환 수 초기화,
-
-        Potal Jumbipotal = GameObject.Find("JumbiPotal").GetComponent<Potal>();
-        Jumbipotal.iNumber = 0;
+            
 
         TextCost Cost = GameObject.Find("Cost").GetComponent<TextCost>();
         Cost.Cost = 100;
@@ -136,7 +134,7 @@ public class UIManager : MonoBehaviour
         {
             Destroy(GameManager.GetInstance.CoinList[i]);
         }
-
+        GameManager.GetInstance.iNumber = 0;
         GameManager.GetInstance.EnemyList.Clear();
         GameManager.GetInstance.GetPlayerList.Clear();
         GameManager.GetInstance.CoinList.Clear();

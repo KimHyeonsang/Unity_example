@@ -104,6 +104,8 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
                 SelectPlayer();
             }
+            else
+                Destroy(Obj);
         }        
         else // ** collider충돌이 안되는 경우
         {

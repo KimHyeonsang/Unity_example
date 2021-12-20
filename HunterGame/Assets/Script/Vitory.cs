@@ -38,6 +38,7 @@ public class Vitory : MonoBehaviour
         }
         GameManager.GetInstance.StageOne.Vitory = true;
         GameManager.GetInstance.inGameMoney += 50;
+
     }
 
   

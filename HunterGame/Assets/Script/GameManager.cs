@@ -20,6 +20,7 @@ public class GameManager
     public List<GameObject> CoinList = new List<GameObject>();
 
     public int MaxZombiNumber = 20;
+    public int iNumber = 0;
     public int KillCount = 0;
 
     public int inGameMoney = 0;
