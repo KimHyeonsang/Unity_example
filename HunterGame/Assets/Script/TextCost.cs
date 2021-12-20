@@ -9,6 +9,7 @@ public class TextCost : MonoBehaviour
     private void Start()
     {
         TCost = GameObject.Find("Cost").GetComponent<Text>();
+        TCost.text = Cost.ToString();
     }
 
     private void Update()

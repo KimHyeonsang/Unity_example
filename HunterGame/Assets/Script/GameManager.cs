@@ -30,9 +30,21 @@ public class GameManager
     // ** 2번째 클리어 조건
     public bool bSecondStar = true;
 
+    // ** 3번째 클리어 조건
     public int AttackerCount = 0;
     public int TankerCount = 0;
     public int ProducerCount = 0;
+
+    public struct Stage
+    {
+        public string StageName;
+        public bool FirstStar;
+        public bool TwoStar;
+        public bool TreeStar;
+        public bool Vitory;
+    }
+
+    public Stage StageOne;
     static public GameManager GetInstance
     {
         get

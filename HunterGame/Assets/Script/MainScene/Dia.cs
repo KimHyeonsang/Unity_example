@@ -7,7 +7,8 @@ public class Dia : MonoBehaviour
     private Text TCost;
     void Start()
     {
-        TCost = GameObject.Find("DiaText").GetComponent<Text>();        
+        TCost = GameObject.Find("DiaText").GetComponent<Text>();
+        TCost.text = GameManager.GetInstance.Dia.ToString();
     }
 
     void Update()

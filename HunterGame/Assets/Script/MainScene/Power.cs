@@ -9,6 +9,7 @@ public class Power : MonoBehaviour
     void Start()
     {
         TPower = GameObject.Find("PowerText").GetComponent<Text>();
+        TPower.text = GameManager.GetInstance.CurPower.ToString() + "/" + GameManager.GetInstance.MaxPower.ToString();
     }
 
     void Update()

@@ -24,7 +24,7 @@ public class EnumyControl : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         bWalk = true;
         bAttack = false;
-        Hart = 300;
+        Hart = 400;
         Dmg = 50;
     }
 

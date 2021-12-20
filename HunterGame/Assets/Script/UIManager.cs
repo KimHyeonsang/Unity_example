@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     public GameObject SpawnUI;
     public GameObject OptionUI;
     public GameObject LoseUI;
+    public GameObject MainUI;
+    public GameObject StageSelectUI;
+    public GameObject StageSelectExplanationBGUI;
 
 
     public void VictoryUiActive()
@@ -61,6 +64,41 @@ public class UIManager : MonoBehaviour
         {
             LoseUI.SetActive(true);
             Time.timeScale = 0;
+        }
+    }
+
+    public void MainUIActive()
+    {
+        if (MainUI.activeSelf == true)
+        {
+            MainUI.SetActive(false);
+        }
+        else
+        {
+            MainUI.SetActive(true);
+        }
+    }
+    public void StageSelectUIActive()
+    {
+        if (StageSelectUI.activeSelf == true)
+        {
+            StageSelectUI.SetActive(false);
+        }
+        else
+        {
+            StageSelectUI.SetActive(true);
+        }
+    }
+
+    public void StageSelectExplanationBGUIActive()
+    {
+        if (StageSelectExplanationBGUI.activeSelf == true)
+        {
+            StageSelectExplanationBGUI.SetActive(false);
+        }
+        else
+        {
+            StageSelectExplanationBGUI.SetActive(true);
         }
     }
 
