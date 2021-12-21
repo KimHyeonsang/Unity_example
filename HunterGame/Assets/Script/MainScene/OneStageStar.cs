@@ -14,26 +14,32 @@
         public Sprite Star;
         void Start()
         {
-            if (GameManager.GetInstance.StageOne.FirstStar == true)
+            Debug.Log("Àû¿ëÁß");
+            Debug.Log(GameManager.GetInstance.StageInfoList[0].FirstStar);
+            for(int i =0; i< GameManager.GetInstance.MaxLevel;++i)
             {
-                FirstImage.sprite = Star;
-                InFirstImage.sprite = Star;
+                 if (GameManager.GetInstance.StageInfoList[i].FirstStar == true)
+                 {
+                     FirstImage.sprite = Star;
+                     InFirstImage.sprite = Star;
+                 }
+                 if (GameManager.GetInstance.StageInfoList[i].TwoStar == true)
+                 {
+                     SecondImage.sprite = Star;
+                     InSecondImage.sprite = Star;
+                 }
+                 if (GameManager.GetInstance.StageInfoList[i].TreeStar == true)
+                 {
+                     ThirdImage.sprite = Star;
+                     InThirdImage.sprite = Star;
+                 }
+
+                 if (GameManager.GetInstance.StageInfoList[0].Vitory == true)
+                 {
+                     GameObject.Find("UIManager").GetComponent<StageManager>().NextLevel();
+                 }
             }
-            if (GameManager.GetInstance.StageOne.TwoStar == true)
-            {
-                SecondImage.sprite = Star;
-                InSecondImage.sprite = Star;
-            }
-            if (GameManager.GetInstance.StageOne.TreeStar == true)
-            {
-                ThirdImage.sprite = Star;
-                InThirdImage.sprite = Star;
-            }
-        
-            if(GameManager.GetInstance.StageOne.Vitory == true)
-            {
-                StageManager.Level++;
-            }
+           
 
 
         }

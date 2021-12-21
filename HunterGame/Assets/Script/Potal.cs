@@ -11,7 +11,6 @@ public class Potal : MonoBehaviour
     private void Start()
     {
         Zombi = Resources.Load("Frefabs/Zombie") as GameObject;
-
        
         //¿Œ∫∏≈©
         InvokeRepeating("CountSpawnDelay", 10.0f,10.0f);

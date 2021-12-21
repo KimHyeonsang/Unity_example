@@ -7,6 +7,7 @@ public class FirstSceneMove : MonoBehaviour
 {
     public void MoveScene()
     {
+        // ** 자원 소모
         GameManager.GetInstance.CurPower -= 15;
 
 

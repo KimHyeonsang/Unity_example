@@ -6264,7 +6264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zombi: {fileID: 0}
-  iNumber: 0
 --- !u!1 &1555326131
 GameObject:
   m_ObjectHideFlags: 0

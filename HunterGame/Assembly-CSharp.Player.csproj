@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\NomalBullet.cs" />
     <Compile Include="Assets\Script\producer.cs" />
+    <Compile Include="Assets\Script\MainScene\OneStageStar.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\MainScene\Power.cs" />
     <Compile Include="Assets\Script\PlayerLife.cs" />
@@ -64,19 +65,19 @@
     <Compile Include="Assets\Script\TextCost.cs" />
     <Compile Include="Assets\Script\MainScene\Dia.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
+    <Compile Include="Assets\Script\MainScene\FirstSceneMove.cs" />
     <Compile Include="Assets\Script\Vitory.cs" />
     <Compile Include="Assets\25 sprite effects\Animation_seq.cs" />
     <Compile Include="Assets\_Heathen Engineering\Samples\UX Examples\Flat Icons [Free]\ToggleSetAnimatorBoolean.cs" />
     <Compile Include="Assets\Script\MainScene\Gold.cs" />
     <Compile Include="Assets\Script\Tanker.cs" />
+    <Compile Include="Assets\Script\MainScene\StageManager.cs" />
     <Compile Include="Assets\Script\PlayerManager.cs" />
     <Compile Include="Assets\Script\Attacker.cs" />
+    <Compile Include="Assets\Script\MainScene\StarText.cs" />
     <Compile Include="Assets\Script\InputSystem.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\ColliderSpawn.cs" />
-    <Compile Include="Assets\Script\MainScene\StarText.cs" />
-    <Compile Include="Assets\Script\MainScene\FirstSceneMove.cs" />
-    <Compile Include="Assets\Script\MainScene\OneStageStar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2D Zombie\Shader\Spine-Skeleton.shader" />

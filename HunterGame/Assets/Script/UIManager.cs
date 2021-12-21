@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject SpawnUI;
     public GameObject OptionUI;
     public GameObject LoseUI;
+    [Tooltip("메인 메뉴쪽 사용")]
     public GameObject MainUI;
     public GameObject StageSelectUI;
     public GameObject StageSelectExplanationBGUI;

@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public static int Level;
-    public int MaxLevel;
     public GameObject[] LevelUnLock;
+    private int Level;
 
     private void Start()
     {
-        Level = 1;
-        MaxLevel = 4;
+        if(GameManager.GetInstance.StageInfoList.Count < GameManager.GetInstance.MaxLevel)
+        {
+            GameManager.GetInstance.StageInfo();
+            Level = GameManager.GetInstance.CurLevel = 0;
+        }            
+
     }
 
     private void Update()
     {
-        for(int i = 0;i < MaxLevel;++i)
+        for(int i = 0;i < GameManager.GetInstance.MaxLevel;++i)
         {
-            if(i < Level)
+            if(i < GameManager.GetInstance.StageInfoList[Level].StageNumber)
             {
                 LevelUnLock[i].SetActive(false);
             }
@@ -31,12 +34,9 @@ public class StageManager : MonoBehaviour
 
     public void NextLevel()
     {
-        ++Level;
+        ++GameManager.GetInstance.CurLevel;
+        Level = GameManager.GetInstance.CurLevel;
         Debug.Log(Level);
     }
 
-    public void Resetaa()
-    {
-        Level = 1;
-    }
 }

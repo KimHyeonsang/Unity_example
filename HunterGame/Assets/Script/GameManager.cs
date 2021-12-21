@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager
 {    
-    static private GameManager Instance;
+    static private GameManager Instance = null;
 
     // ** 플레이어 소환 리스트
     private List<GameObject> PlayerList = new List<GameObject>();
+
     // ** 적 소환 리스트
     public List<GameObject> EnemyList = new List<GameObject>();
 
@@ -18,6 +19,9 @@ public class GameManager
 
     // ** 코인리스트
     public List<GameObject> CoinList = new List<GameObject>();
+
+    // ** 스테이지 정보를 저장
+    public List<Stage> StageInfoList = new List<Stage>();
 
     public int MaxZombiNumber = 20;
     public int iNumber = 0;
@@ -36,13 +40,40 @@ public class GameManager
     public int TankerCount = 0;
     public int ProducerCount = 0;
 
-    public struct Stage
+    // ** 최대스테이지
+    public int MaxLevel = 4;
+    // ** 현재 스테이지
+    public int CurLevel;
+
+    public class Stage
     {
-        public string StageName;
+        // ** 스테이지 번호
+        public int StageNumber;
+        // ** 첫째별
         public bool FirstStar;
+        // ** 둘째별
         public bool TwoStar;
+        // ** 셋째별
         public bool TreeStar;
+        // ** 승리 유무
         public bool Vitory;
+
+        public Stage(int _StageNumber, bool _FirstStar, bool _TwoStar, bool _TreeStar, bool _Vitory)
+        {
+            StageNumber = _StageNumber;
+            FirstStar = _FirstStar;
+            TwoStar = _TwoStar;
+            TreeStar = _TreeStar;
+            Vitory = _Vitory;
+        }
+
+        public void SetStage(bool _FirstStar, bool _TwoStar,bool _TreeStar,bool _Vitory)
+        {
+            FirstStar = _FirstStar;
+            TwoStar = _TwoStar;
+            TreeStar = _TreeStar;
+            Vitory = _Vitory;
+        }
     }
 
     public Stage StageOne;
@@ -51,7 +82,9 @@ public class GameManager
         get
         {
             if (Instance == null)
+            {
                 Instance = new GameManager();
+            }
 
             return Instance;
         }
@@ -64,6 +97,14 @@ public class GameManager
             return PlayerList;
         }
     }
+    public void StageInfo()
+    {
+        // ** 스테이지 4까지
+        for(int i=0;i < MaxLevel; ++i)
+        {
+            StageOne = new Stage(i + 1, false, false, false, false);
+            StageInfoList.Add(StageOne);
 
-    
+        }
+    }
 }
