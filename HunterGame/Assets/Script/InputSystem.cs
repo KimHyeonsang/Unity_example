@@ -125,7 +125,6 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 GameObject.Find("Cost").GetComponent<TextCost>().Cost -= Cost;
                 Obj.AddComponent<producer>();
                 GameManager.GetInstance.GetPlayerList.Add(Obj);
-                GameManager.GetInstance.ProducerCount++;
             }
             else
                 Destroy(Obj);
@@ -138,7 +137,6 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 GameObject.Find("Cost").GetComponent<TextCost>().Cost -= Cost;
                 Obj.AddComponent<Tanker>();
                 GameManager.GetInstance.GetPlayerList.Add(Obj);
-                GameManager.GetInstance.TankerCount++;
             }
             else
                 Destroy(Obj);
@@ -152,7 +150,6 @@ public class InputSystem : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
                 Obj.AddComponent<Attacker>();
 
                 GameManager.GetInstance.GetPlayerList.Add(Obj);
-                GameManager.GetInstance.AttackerCount++;
             }
             else
                 Destroy(Obj);            

@@ -21,7 +21,7 @@ public class GameManager
     public List<GameObject> CoinList = new List<GameObject>();
 
     // ** 스테이지 정보를 저장
-    public List<Stage> StageInfoList = new List<Stage>();
+ //   public List<Stage> StageInfoList = new List<Stage>();
 
     public int MaxZombiNumber = 20;
     public int iNumber = 0;
@@ -32,51 +32,33 @@ public class GameManager
     public int CurPower = 150;
     public int Dia = 0;
 
-    // ** 2번째 클리어 조건
-    public bool bSecondStar = true;
-
-    // ** 3번째 클리어 조건
-    public int AttackerCount = 0;
-    public int TankerCount = 0;
-    public int ProducerCount = 0;
-
+   
     // ** 최대스테이지
     public int MaxLevel = 4;
     // ** 현재 스테이지
     public int CurLevel;
 
-    public class Stage
-    {
-        // ** 스테이지 번호
-        public int StageNumber;
-        // ** 첫째별
-        public bool FirstStar;
-        // ** 둘째별
-        public bool TwoStar;
-        // ** 셋째별
-        public bool TreeStar;
-        // ** 승리 유무
-        public bool Vitory;
+//    public class Stage
+//    {
+//        // ** 스테이지 번호
+//        public int StageNumber;
+//        
+//        // ** 승리 유무
+//        public bool Vitory;
+//
+//        public Stage(int _StageNumber, bool _Vitory)
+//        {
+//            StageNumber = _StageNumber;
+//            Vitory = _Vitory;
+//        }
+//
+//        public void SetStage(bool _Vitory)
+//        {            
+//            Vitory = _Vitory;
+//        }
+//    }
 
-        public Stage(int _StageNumber, bool _FirstStar, bool _TwoStar, bool _TreeStar, bool _Vitory)
-        {
-            StageNumber = _StageNumber;
-            FirstStar = _FirstStar;
-            TwoStar = _TwoStar;
-            TreeStar = _TreeStar;
-            Vitory = _Vitory;
-        }
-
-        public void SetStage(bool _FirstStar, bool _TwoStar,bool _TreeStar,bool _Vitory)
-        {
-            FirstStar = _FirstStar;
-            TwoStar = _TwoStar;
-            TreeStar = _TreeStar;
-            Vitory = _Vitory;
-        }
-    }
-
-    public Stage StageOne;
+ //   public Stage StageOne;
     static public GameManager GetInstance
     {
         get
@@ -95,16 +77,6 @@ public class GameManager
         get
         {
             return PlayerList;
-        }
-    }
-    public void StageInfo()
-    {
-        // ** 스테이지 4까지
-        for(int i=0;i < MaxLevel; ++i)
-        {
-            StageOne = new Stage(i + 1, false, false, false, false);
-            StageInfoList.Add(StageOne);
-
         }
     }
 }

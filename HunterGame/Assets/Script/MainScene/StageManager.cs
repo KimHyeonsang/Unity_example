@@ -9,10 +9,9 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.GetInstance.StageInfoList.Count < GameManager.GetInstance.MaxLevel)
+        if(GameManager.GetInstance.CurLevel < GameManager.GetInstance.MaxLevel)
         {
-            GameManager.GetInstance.StageInfo();
-            Level = GameManager.GetInstance.CurLevel = 0;
+            GameManager.GetInstance.CurLevel = 0;
         }            
 
     }
@@ -21,7 +20,7 @@ public class StageManager : MonoBehaviour
     {
         for(int i = 0;i < GameManager.GetInstance.MaxLevel;++i)
         {
-            if(i < GameManager.GetInstance.StageInfoList[Level].StageNumber)
+            if(i < GameManager.GetInstance.CurLevel)
             {
                 LevelUnLock[i].SetActive(false);
             }
@@ -31,12 +30,10 @@ public class StageManager : MonoBehaviour
             }
         }
     }
-
     public void NextLevel()
     {
         ++GameManager.GetInstance.CurLevel;
-        Level = GameManager.GetInstance.CurLevel;
-        Debug.Log(Level);
+        Debug.Log(GameManager.GetInstance.CurLevel);
     }
 
 }

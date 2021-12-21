@@ -139,9 +139,6 @@ public class UIManager : MonoBehaviour
         GameManager.GetInstance.EnemyList.Clear();
         GameManager.GetInstance.GetPlayerList.Clear();
         GameManager.GetInstance.CoinList.Clear();
-        GameManager.GetInstance.AttackerCount = 0;
-        GameManager.GetInstance.TankerCount = 0;
-        GameManager.GetInstance.ProducerCount = 0;
 
     }
 }
