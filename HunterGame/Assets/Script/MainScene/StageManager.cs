@@ -1,26 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
     public GameObject[] LevelUnLock;
-    private int Level;
-
+    public static int Level = 1;
+    private int num = 0;
     private void Start()
     {
-        if(GameManager.GetInstance.CurLevel < GameManager.GetInstance.MaxLevel)
+        if(num == 0)
         {
-            GameManager.GetInstance.CurLevel = 0;
-        }            
-
+            DeletePrefs();
+            num = 1;
+        }
+        Level = PlayerPrefs.GetInt("Level", Level);        
     }
 
     private void Update()
     {
-        for(int i = 0;i < GameManager.GetInstance.MaxLevel;++i)
+        for (int i = 0; i < GameManager.GetInstance.MaxLevel; ++i)
         {
-            if(i < GameManager.GetInstance.CurLevel)
+            if (i < Level)
             {
                 LevelUnLock[i].SetActive(false);
             }
@@ -30,10 +32,21 @@ public class StageManager : MonoBehaviour
             }
         }
     }
-    public void NextLevel()
-    {
-        ++GameManager.GetInstance.CurLevel;
-        Debug.Log(GameManager.GetInstance.CurLevel);
+
+    public static void Next_Level()
+    {       
+        Level += 1;
+        PlayerPrefs.SetInt("Level", Level);        
     }
 
+    public void Reset()
+    {
+        Level = 1;
+        PlayerPrefs.SetInt("Level", Level);
+    }
+
+    public void DeletePrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

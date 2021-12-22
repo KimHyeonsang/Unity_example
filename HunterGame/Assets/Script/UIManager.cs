@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject MainUI;
     public GameObject StageSelectUI;
     public GameObject StageSelectExplanationBGUI;
+    public GameObject PlayerPowerUI;
 
 
     public void VictoryUiActive()
@@ -103,12 +104,23 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void PlayerPowerUIActive()
+    {
+        if (PlayerPowerUI.activeSelf == true)
+        {
+            PlayerPowerUI.SetActive(false);
+        }
+        else
+        {
+            PlayerPowerUI.SetActive(true);
+        }
+    }
     public void ReStartScene()
     {
         // 초기화 목록  코인 기본가격,현재 좀비 소환 수 초기화,
             
 
-        TextCost Cost = GameObject.Find("Cost").GetComponent<TextCost>();
+        TextCost Cost = SpawnUI.GetComponent<TextCost>();
         Cost.Cost = 100;
 
         for (int i = 0; i < GameManager.GetInstance.GetPlayerList.Count; ++i)

@@ -13,11 +13,13 @@ public class Vitory : MonoBehaviour
     {
         // 소환 목록
         UIManager UiObj = GameObject.Find("UiManager").GetComponent<UIManager>();
-        UiObj.SpawnUIActive();        
+       
 
-   
-    //    GameManager.GetInstance.StageInfoList[0].SetStage(true);
-        
+
+        //    GameManager.GetInstance.StageInfoList[0].SetStage(true);
+        StageManager.Next_Level();
+        // 초기화
+        UiObj.ReStartScene();
         GameManager.GetInstance.inGameMoney += 50;
 
     }

@@ -55,13 +55,13 @@
   <ItemGroup>
     <Compile Include="Assets\Script\NomalBullet.cs" />
     <Compile Include="Assets\Script\producer.cs" />
-    <Compile Include="Assets\Script\MainScene\OneStageStar.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\MainScene\Power.cs" />
     <Compile Include="Assets\Script\PlayerLife.cs" />
     <Compile Include="Assets\Script\EnumyControl.cs" />
     <Compile Include="Assets\Script\Potal.cs" />
     <Compile Include="Assets\Script\CoinControl.cs" />
+    <Compile Include="Assets\Script\Power\AttackerInfo.cs" />
     <Compile Include="Assets\Script\TextCost.cs" />
     <Compile Include="Assets\Script\MainScene\Dia.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\InputSystem.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\ColliderSpawn.cs" />
+    <Compile Include="Assets\Script\Power\TankerInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2D Zombie\Shader\Spine-Skeleton.shader" />
