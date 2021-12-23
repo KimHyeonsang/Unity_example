@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     public GameObject StageSelectUI;
     public GameObject StageSelectExplanationBGUI;
     public GameObject PlayerPowerUI;
+    public GameObject ShopUI;
+    public GameObject DiaShopUI;
+    public GameObject EggShopUI;
 
 
     public void VictoryUiActive()
@@ -113,6 +116,40 @@ public class UIManager : MonoBehaviour
         else
         {
             PlayerPowerUI.SetActive(true);
+        }
+    }
+
+    public void ShopUIActive()
+    {
+        if (ShopUI.activeSelf == true)
+        {
+            ShopUI.SetActive(false);
+        }
+        else
+        {
+            ShopUI.SetActive(true);
+        }
+    }
+    public void DiaShopUIActive()
+    {
+        if (DiaShopUI.activeSelf == true)
+        {
+            DiaShopUI.SetActive(false);
+        }
+        else
+        {
+            DiaShopUI.SetActive(true);
+        }
+    }
+    public void EggShopUIActive()
+    {
+        if (EggShopUI.activeSelf == true)
+        {
+            EggShopUI.SetActive(false);
+        }
+        else
+        {
+            EggShopUI.SetActive(true);
         }
     }
     public void ReStartScene()

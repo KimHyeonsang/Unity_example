@@ -10,7 +10,7 @@ public class AttackerInfo : MonoBehaviour
     public static int Hart = 300;
     public static int Attack = 40;
     public int price = 100;
-    public int HartUp1 = 60;
+    public int HartUp = 60;
     public int AttackUp = 10;
     public Sprite Imge;
     public GameObject FailBG;
@@ -19,7 +19,7 @@ public class AttackerInfo : MonoBehaviour
     {
         GameObject.Find("LvText").GetComponent<Text>().text = Level2.ToString() + " / " + MaxLevel.ToString();
         GameObject.Find("DmgText").GetComponent<Text>().text = "공격력 :" + Attack.ToString() + " + " + AttackUp.ToString();
-        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp1.ToString();
+        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp.ToString();
         GameObject.Find("CostText").GetComponent<Text>().text = "비용 :" + price.ToString();
         GameObject.Find("Photo").GetComponent<Image>().sprite = Imge;
     }
@@ -27,7 +27,7 @@ public class AttackerInfo : MonoBehaviour
     {
         GameObject.Find("LvText").GetComponent<Text>().text = Level2.ToString() + " / " + MaxLevel.ToString();
         GameObject.Find("DmgText").GetComponent<Text>().text = "공격력 :" + Attack.ToString() + " + " + AttackUp.ToString();
-        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp1.ToString();
+        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp.ToString();
         GameObject.Find("CostText").GetComponent<Text>().text = "비용 :" + price.ToString();
         GameObject.Find("Photo").GetComponent<Image>().sprite = Imge;
     }
@@ -35,11 +35,11 @@ public class AttackerInfo : MonoBehaviour
     {
         if(GameManager.GetInstance.inGameMoney >= price)
         {
-            Hart += HartUp1;
+            Hart += HartUp;
             Attack += AttackUp;
+            GameManager.GetInstance.inGameMoney -= price;
             price *= 5;
             Level2++;
-            GameManager.GetInstance.inGameMoney -= price;
         }
         else
         {

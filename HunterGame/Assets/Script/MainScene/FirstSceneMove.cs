@@ -8,10 +8,12 @@ public class FirstSceneMove : MonoBehaviour
     public void MoveScene()
     {
         // ** 자원 소모
-        GameManager.GetInstance.CurPower -= 15;
-
-
-        SceneManager.LoadScene("SampleScene");
+        if(GameManager.GetInstance.CurPower >= 15)
+        {
+            GameManager.GetInstance.CurPower -= 15;
+            SceneManager.LoadScene("SampleScene");
+        }
+            
     }
 
     public void FirstScene()

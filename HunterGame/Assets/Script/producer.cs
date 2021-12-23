@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class producer : MonoBehaviour
 {
-    public int Hart;
     public GameObject RemoveObject;
 
     [SerializeField] private GameObject Coin;
@@ -16,8 +15,6 @@ public class producer : MonoBehaviour
    
     void Start()
     {
-        Hart = 200;
-       
         CoolTime = Random.Range(5,11);
         Coin = Resources.Load("Frefabs/Coin") as GameObject;
         CurTime = CoolTime;
@@ -59,12 +56,12 @@ public class producer : MonoBehaviour
     public void Hit(int _Dmg)
     {
         // ** 체력이 0 이상일 때
-        if (Hart > 0)
+        if (ProducerInfo.Hart > 0)
         {
-            Hart -= _Dmg;
+            ProducerInfo.Hart -= _Dmg;
         }
         
-        if(Hart <= 0)
+        if(ProducerInfo.Hart <= 0)
         {
             // ** 지운 오브젝트 활성화
             RemoveObject.SetActive(true);

@@ -9,14 +9,14 @@ public class ProducerInfo : MonoBehaviour
     public int MaxLevel = 10;
     public static int Hart = 200;
     public static int price = 150;
-    public int HartUp2 = 50;
+    public int HartUp = 50;
     public Sprite Imge;
     public GameObject FailBG;
     void Start()
     {
         GameObject.Find("LvText").GetComponent<Text>().text = Level.ToString() + " / " + MaxLevel.ToString();
         GameObject.Find("DmgText").GetComponent<Text>().text = "공격력 :   0";
-        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp2.ToString();
+        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp.ToString();
         GameObject.Find("CostText").GetComponent<Text>().text = "비용 :" + price.ToString();
         GameObject.Find("Photo").GetComponent<Image>().sprite = Imge;
     }
@@ -25,7 +25,7 @@ public class ProducerInfo : MonoBehaviour
     {
         GameObject.Find("LvText").GetComponent<Text>().text = Level.ToString() + " / " + MaxLevel.ToString();
         GameObject.Find("DmgText").GetComponent<Text>().text = "공격력 :  0";
-        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp2.ToString();
+        GameObject.Find("HartText").GetComponent<Text>().text = "체력 :" + Hart.ToString() + " + " + HartUp.ToString();
         GameObject.Find("CostText").GetComponent<Text>().text = "비용 :" + price.ToString();
         GameObject.Find("Photo").GetComponent<Image>().sprite = Imge;
     }
@@ -34,9 +34,9 @@ public class ProducerInfo : MonoBehaviour
         if (GameManager.GetInstance.inGameMoney >= price)
         {
             Level++;
-            Hart += HartUp2;
-            price *= 5;
+            Hart += HartUp;
             GameManager.GetInstance.inGameMoney -= price;
+            price *= 5;
         }
         else
         {

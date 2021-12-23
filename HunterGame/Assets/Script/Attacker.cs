@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attacker : MonoBehaviour
-{
-    public int Attack;
-    public int Hart;
+{    
     //  ** 삭제 시킨 오브젝트 저장
     private GameObject RemoveObject;
     private GameObject BulletObj;
@@ -18,9 +16,7 @@ public class Attacker : MonoBehaviour
     [Tooltip("현재 쿨타임")]
     private float CurTime;
     void Start()
-    {        
-        Hart = 300;
-        Attack = 40;
+    {
         bShort = false;
         CoolTime = 3.0f;
         BulletObj = Resources.Load("Frefabs/NomalBullet") as GameObject;
@@ -44,7 +40,7 @@ public class Attacker : MonoBehaviour
                     Obj.transform.position = new Vector3(transform.position.x + 2, transform.position.y - 1, transform.position.z);
 
                     // 타겟 위치 저장
-                    Obj.GetComponent<NomalBullet>().TargetPosition(Target[i], Attack);
+                    Obj.GetComponent<NomalBullet>().TargetPosition(Target[i], AttackerInfo.Attack);
 
                     CurTime = CoolTime;
                 }
@@ -93,12 +89,12 @@ public class Attacker : MonoBehaviour
     public void Hit(int _Dmg)
     {
         // ** 체력이 0 이상일 때
-        if (Hart > 0)
+        if (AttackerInfo.Hart > 0)
         {
-            Hart -= _Dmg;
+            AttackerInfo.Hart -= _Dmg;
         }
 
-        if (Hart <= 0)
+        if (AttackerInfo.Hart <= 0)
         {
             // ** 지운 오브젝트 활성화
             RemoveObject.SetActive(true);
