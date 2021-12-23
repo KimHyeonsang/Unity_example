@@ -58,6 +58,7 @@
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\MainScene\Power.cs" />
     <Compile Include="Assets\Script\PlayerLife.cs" />
+    <Compile Include="Assets\Script\Power\TankerInfo.cs" />
     <Compile Include="Assets\Script\EnumyControl.cs" />
     <Compile Include="Assets\Script\Potal.cs" />
     <Compile Include="Assets\Script\CoinControl.cs" />
@@ -78,7 +79,8 @@
     <Compile Include="Assets\Script\InputSystem.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\ColliderSpawn.cs" />
-    <Compile Include="Assets\Script\Power\TankerInfo.cs" />
+    <Compile Include="Assets\Script\Power\ProducerInfo.cs" />
+    <Compile Include="Assets\Script\Power\PowerUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2D Zombie\Shader\Spine-Skeleton.shader" />

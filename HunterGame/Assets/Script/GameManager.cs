@@ -25,7 +25,7 @@ public class GameManager
     public int iNumber = 0;
     public int KillCount = 0;
 
-    public int inGameMoney = 0;
+    public int inGameMoney = 1000000;
     public int MaxPower = 150;
     public int CurPower = 150;
     public int Dia = 0;
