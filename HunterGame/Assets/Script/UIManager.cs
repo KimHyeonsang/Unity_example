@@ -132,23 +132,17 @@ public class UIManager : MonoBehaviour
     }
     public void DiaShopUIActive()
     {
-        if (DiaShopUI.activeSelf == true)
-        {
-            DiaShopUI.SetActive(false);
-        }
-        else
+        if (DiaShopUI.activeSelf == false)        
         {
             DiaShopUI.SetActive(true);
+            EggShopUI.SetActive(false);
         }
     }
     public void EggShopUIActive()
     {
-        if (EggShopUI.activeSelf == true)
+        if (EggShopUI.activeSelf == false)        
         {
-            EggShopUI.SetActive(false);
-        }
-        else
-        {
+            DiaShopUI.SetActive(false);
             EggShopUI.SetActive(true);
         }
     }

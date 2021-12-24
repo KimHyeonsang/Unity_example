@@ -13,10 +13,12 @@ TagManager:
   - Coin
   - PlayerLife
   - NomalBullet
-  - OneStar
-  - TwoStar
-  - TreeStar
   - Stage
+  - Dia1
+  - Dia2
+  - Dia3
+  - Dia4
+  - Copy
   layers:
   - Default
   - TransparentFX

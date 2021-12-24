@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager
 {
-    static private PlayerManager Instance;
+    static private PlayerManager Instance = null;
     static public PlayerManager Getinstace
     {
         get
