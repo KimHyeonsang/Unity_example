@@ -8,6 +8,8 @@ public class NomalBullet : MonoBehaviour
     private int Dmg;
     private GameObject Target;
     private bool life;
+
+    public GameObject m_Effect;
     void Start()
     {
         Speed = 10.0f;
@@ -16,11 +18,10 @@ public class NomalBullet : MonoBehaviour
 
     void Update()
     {
-
         if(Target.GetComponent<EnumyControl>().Hart <= 0)
         {
             Destroy(gameObject);
-            Destroy(Target);
+            Destroy(Target,2.0f);
         }
         else
         {
@@ -29,22 +30,6 @@ public class NomalBullet : MonoBehaviour
 
             transform.Translate(vec * Speed * Time.deltaTime);
         }
-   //     life = false;
-   //     GameObject[] Obj = GameObject.FindGameObjectsWithTag("Target");
-   //
-   //     for (int i = 0; i < Obj.Length; ++i)
-   //     {
-   //         if (Obj[i].transform.position == Target.transform.position)
-   //         {
-   //             life = true;
-   //         }
-   //     }
-   //     if (life == false)
-   //         Destroy(gameObject);
-   //     else
-   //     {
-            
-   //     }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

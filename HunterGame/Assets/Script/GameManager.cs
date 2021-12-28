@@ -28,9 +28,11 @@ public class GameManager
     public int inGameMoney = 1000000;
     public int MaxPower = 150;
     public int CurPower = 150;
-    public int Dia = 0;
+    public int Dia = 100000;
 
-   
+    public int AttackCount = 10;
+    public int ProducerCount = 10;
+    public int TankerCount = 10;
     // ** 최대스테이지
     public int MaxLevel = 4;
     // ** 현재 스테이지

@@ -149,10 +149,7 @@ public class UIManager : MonoBehaviour
     public void ReStartScene()
     {
         // 초기화 목록  코인 기본가격,현재 좀비 소환 수 초기화,
-            
-
-        TextCost Cost = SpawnUI.GetComponent<TextCost>();
-        Cost.Cost = 100;
+        GameObject.Find("Cost").GetComponent<TextCost>().Cost = 100;
 
         for (int i = 0; i < GameManager.GetInstance.GetPlayerList.Count; ++i)
         {
@@ -182,6 +179,6 @@ public class UIManager : MonoBehaviour
         GameManager.GetInstance.EnemyList.Clear();
         GameManager.GetInstance.GetPlayerList.Clear();
         GameManager.GetInstance.CoinList.Clear();
-
+        Time.timeScale = 1;
     }
 }
