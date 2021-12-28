@@ -19,6 +19,7 @@ TagManager:
   - Dia3
   - Dia4
   - Copy
+  - RandomImage
   layers:
   - Default
   - TransparentFX
