@@ -49,17 +49,22 @@ public class AnimetionContrl : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButton(0))
-            {
-                Combination = true;
-                Anim.SetBool("Combination", Combination);
-                StartCoroutine("SetCombination");
-            }
+        //   if (Input.GetMouseButton(0))
+        //   {
+        //       Combination = true;
+        //       Anim.SetBool("Combination", Combination);
+        //       StartCoroutine("SetCombination");
+        //   }
         }
-
+        if (Input.GetMouseButton(0))
+        {
+            Combination = true;
+            Anim.SetBool("Combination", Combination);
+            StartCoroutine("SetCombination");
+        }
         Anim.SetFloat("Speed", Ver);
+    //    Anim.SetBool("Combination", Combination);
 
-        
     }
 
     private void LateUpdate()
@@ -92,17 +97,19 @@ public class AnimetionContrl : MonoBehaviour
 
             CombinationTime -= Time.deltaTime;
 
-            if(CombinationTime <= 0)
+            if (CombinationTime <= 0)
                 break;
+
             if (Input.GetMouseButton(0))
             {
                 Anim.SetTrigger("NextCombination");
                 CombinationTime = 0.4f;
             }
-
+           
         }
 
         Combination = false;
+        Anim.SetBool("Combination", Combination);
         CombinationTime = 0.4f;
     }
     public void SetAttackMotion()
