@@ -525,6 +525,9 @@ MonoBehaviour:
   Target: {fileID: 1803270932}
   SmoothTime: 0
   Offset: {x: 0, y: 0, z: 0}
+  MaxPoint: {x: 0, y: 0, z: 0}
+  MinPoint: {x: 0, y: 0, z: 0}
+  Distance: 0
 --- !u!1001 &423508145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1703,9 +1706,9 @@ GameObject:
   - component: {fileID: 1803270934}
   - component: {fileID: 1803270933}
   - component: {fileID: 1803270937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
