@@ -99,10 +99,10 @@ public class FollowCamera : MonoBehaviour
 
 
         // ** 선형보간  ( 최대값과 최소값사이에서 움직이게함)
-  //     transform.position = Vector3.Lerp(
-  //         Target.transform.position + MaxPoint,
-  //         Target.transform.position + MinPoint,
-  //         Distance);
+       transform.position = Vector3.Lerp(
+           Target.transform.position + MaxPoint,
+           Target.transform.position + MinPoint,
+           Distance);
         /*
         var Hor = Input.GetAxis("Horizontal");
         transform.RotateAround(
@@ -118,20 +118,7 @@ public class FollowCamera : MonoBehaviour
             Time.deltaTime);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            ShakeCamera = !ShakeCamera;
-
-        if(ShakeCamera)
-        {
-            Vector3 ShakeOffset = new Vector3(
-                Random.Range(-0.1f,0.1f) * Radius,
-                 Random.Range(-0.1f, 0.1f) * Radius,
-                0.0f);
-
-            MainCamera.transform.position += ShakeOffset;
-        }
-
-        MouseWheel();
+       
 
        if(Input.GetMouseButton(0))
         {
@@ -164,8 +151,7 @@ public class FollowCamera : MonoBehaviour
         float Wheel = Input.GetAxis("Mouse ScrollWheel") * -1;
         
         if(Wheel != 0)
-        {
-            
+        {            
             //Distance += Wheel * 10.0f * Time.deltaTime;
              Distance = Mathf.Lerp(
             Distance,
